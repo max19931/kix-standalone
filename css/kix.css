@@ -1,34 +1,7 @@
-.docs-chat-pane-container {
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 250px;
-	border-left: 1px solid #68e
-}
-.docs-chat-pane {
-	height: 100%;
-	position: relative;
-	padding-left: 5px;
-	background-color: #fff;
-	overflow: hidden;
-	font-size: 13px
-}
-.docs-chat-users {
-	max-height: 33%;
-	overflow: auto;
-	text-align: left;
-	color: #000;
-	vertical-align: top;
-	padding: 3px 0
-}
-.docs-chat-messages {
-	position: relative;
-	overflow: auto;
-	vertical-align: middle;
-	color: #000;
-	background-color: #fff;
-	padding-left: 1.1em
-}
+.docs-chat-pane-container {position: absolute;right: 0;top: 0;width: 250px;border-left: 1px solid #68e}
+.docs-chat-pane {height: 100%;position: relative;padding-left: 5px;background-color: #fff;overflow: hidden;font-size: 13px}
+.docs-chat-users {max-height: 33%;overflow: auto;text-align: left;color: #000;vertical-align: top;padding: 3px 0}
+.docs-chat-messages {position: relative;overflow: auto;vertical-align: middle;color: #000;background-color: #fff;padding-left: 1.1em}
 .docs-chat-edit-box {
 	font: 100% Arial,sans-serif;
 	position: absolute;
@@ -42,24 +15,11 @@
 	padding: 3px 0 3px 3px;
 	outline: 0
 }
-.docs-chat-edit-box-focus {
-	border: 2px solid #5ea0e3
-}
-.docs-chat-status {
-	color: gray
-}
-.docs-chat-name {
-	float: left;
-	font-weight: bold;
-	margin-left: -1em
-}
-.docs-chat-message {
-	margin-top: 2px;
-	word-wrap: break-word
-}
-.docs-user-roster {
-	padding: 0 0 10px 5px
-}
+.docs-chat-edit-box-focus {border: 2px solid #5ea0e3}
+.docs-chat-status {color: gray}
+.docs-chat-name {float: left;font-weight: bold;margin-left: -1em}
+.docs-chat-message {margin-top: 2px;word-wrap: break-word}
+.docs-user-roster {padding: 0 0 10px 5px}
 .docs-user-roster-bubble {
 	height: 1em;
 	width: 1em;
@@ -67,10 +27,7 @@
 	vertical-align: text-bottom;
 	border: 1px solid #fff
 }
-.docs-user-roster-bubble-clickable {
-	border: 1px solid #0000cc;
-	cursor: pointer
-}
+.docs-user-roster-bubble-clickable {border: 1px solid #0000cc;cursor: pointer}
 .docs-presence-widget {
 	border-left-style: solid;
 	border-left-width: 1px;
@@ -83,28 +40,15 @@
 	top: 0;
 	width: 250px
 }
-.docs-presence-widget-normal {
-	background: #68e;
-	border-left-color: #68e
-}
-.docs-presence-widget-notify {
-	background: #ed8c1f;
-	border-left-color: #ed8c1f
-}
+.docs-presence-widget-normal {background: #68e;border-left-color: #68e}
+.docs-presence-widget-notify {background: #ed8c1f;border-left-color: #ed8c1f}
 .docs-presence-widget .docs-icon-chevron {
 	position: absolute;
 	right: 0;
 	top: 5px
 }
-.docs-presence-widget-inner {
-	padding: 5px 16px 5px 8px
-}
-.docs-presence-widget-content {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	width: 100%;
-	white-space: nowrap
-}
+.docs-presence-widget-inner {padding: 5px 16px 5px 8px}
+.docs-presence-widget-content {overflow: hidden;text-overflow: ellipsis;width: 100%;white-space: nowrap}
 div.CSS_SHORTCUTS_HELP_POPUP {
 	left: 10%;
 	width: 80%;
@@ -118,43 +62,20 @@ div.CSS_SHORTCUTS_HELP_POPUP {
 	background: #000 none repeat scroll 0;
 	overflow: hidden
 }
-div.CSS_SHORTCUTS_HELP_POPUP_CONTAINER {
-	padding: 1em
-}
-table.CSS_SHORTCUTS_HELP_POPUP_HEADER,table.CSS_SHORTCUTS_HELP_POPUP_CONTENT {
-	width: 100%
-}
-.CSS_SHORTCUTS_HELP_POPUP_HEADER_TABLE_ELEMENT {
-	padding-bottom: 0.8ex
-}
-.CSS_SHORTCUTS_HELP_POPUP_TITLE {
-	font-size: 15px;
-	white-space: nowrap;
-	text-align: left
-}
-.CSS_SHORTCUTS_HELP_POPUP_TEAROFF_LINK_CONTAINER {
-	color: #dd0;
-	text-align: right
-}
+div.CSS_SHORTCUTS_HELP_POPUP_CONTAINER {padding: 1em}
+table.CSS_SHORTCUTS_HELP_POPUP_HEADER,table.CSS_SHORTCUTS_HELP_POPUP_CONTENT {width: 100%}
+.CSS_SHORTCUTS_HELP_POPUP_HEADER_TABLE_ELEMENT {padding-bottom: 0.8ex}
+.CSS_SHORTCUTS_HELP_POPUP_TITLE {font-size: 15px;white-space: nowrap;text-align: left}
+.CSS_SHORTCUTS_HELP_POPUP_TEAROFF_LINK_CONTAINER {color: #dd0;text-align: right}
 .CSS_SHORTCUTS_HELP_POPUP_TEAROFF_LINK {
 	font-size: 15px;
 	cursor: pointer;
 	text-decoration: underline;
 	color: #dd0
 }
-table.CSS_SHORTCUTS_HELP_POPUP_CONTENT {
-	border-top: 1px solid #999;
-	font-size: 13px
-}
-.CSS_SHORTCUTS_HELP_POPUP_CONTENT_HEADER {
-	color: #dd0;
-	padding-top: 1em;
-	text-align: left
-}
-.CSS_SHORTCUTS_HELP_POPUP_CONTENT_ELEMENT {
-	vertical-align: top;
-	padding-top: 0.15em
-}
+table.CSS_SHORTCUTS_HELP_POPUP_CONTENT {border-top: 1px solid #999;font-size: 13px}
+.CSS_SHORTCUTS_HELP_POPUP_CONTENT_HEADER {color: #dd0;padding-top: 1em;text-align: left}
+.CSS_SHORTCUTS_HELP_POPUP_CONTENT_ELEMENT {vertical-align: top;padding-top: 0.15em}
 table.CSS_SHORTCUTS_HELP_POPUP_CONTENT td.CSS_SHORTCUTS_HELP_POPUP_KEY {
 	font-weight: bold;
 	padding-right: 0.3em;
@@ -165,19 +86,9 @@ table.CSS_SHORTCUTS_HELP_POPUP_CONTENT td.CSS_SHORTCUTS_HELP_POPUP_DESCRIPTION {
 	font-weight: normal;
 	text-align: left
 }
-span.CSS_SHORTCUTS_HELP_POPUP_AUXILIARY_WORD {
-	font-weight: normal;
-	font-size: 11px
-}
-span.CSS_SHORTCUTS_HELP_POPUP_KEY_MNEMONIC {
-	font-family: "Courier New";
-	color: #dd0
-}
-.goog-char-picker {
-	background-color: #ddd;
-	padding: 16px;
-	border: 1px solid #777
-}
+span.CSS_SHORTCUTS_HELP_POPUP_AUXILIARY_WORD {font-weight: normal;font-size: 11px}
+span.CSS_SHORTCUTS_HELP_POPUP_KEY_MNEMONIC {font-family: "Courier New";color: #dd0}
+.goog-char-picker {background-color: #ddd;padding: 16px;border: 1px solid #777}
 .goog-char-picker-hovercard {
 	border: solid 5px #ffcc33;
 	min-width: 64px;
@@ -189,30 +100,11 @@ span.CSS_SHORTCUTS_HELP_POPUP_KEY_MNEMONIC {
 	position: absolute;
 	visibility: hidden
 }
-.goog-char-picker-char-zoom {
-	font-size: xx-large
-}
-.goog-char-picker-grid-container {
-	border: 1px solid #777;
-	background-color: #fff;
-	width: 272px
-}
-.goog-char-picker-grid {
-	overflow: hide;
-	height: 250px;
-	width: 250px;
-	position: relative
-}
-.goog-stick {
-	width: 1px;
-	overflow: hidden
-}
-.goog-stickwrap {
-	width: 17px;
-	height: 250px;
-	float: right;
-	overflow: auto
-}
+.goog-char-picker-char-zoom {font-size: xx-large}
+.goog-char-picker-grid-container {border: 1px solid #777;background-color: #fff;width: 272px}
+.goog-char-picker-grid {overflow: hide;height: 250px;width: 250px;position: relative}
+.goog-stick {width: 1px;overflow: hidden}
+.goog-stickwrap {width: 17px;height: 250px;float: right;overflow: auto}
 .goog-char-picker-recents {
 	border: 1px solid #777;
 	background-color: #fff;
@@ -221,18 +113,9 @@ span.CSS_SHORTCUTS_HELP_POPUP_KEY_MNEMONIC {
 	margin: 0 0 16px 0;
 	position: relative
 }
-.goog-char-picker-notice {
-	font-size: x-small;
-	height: 16px;
-	color: GrayText;
-	margin: 0 0 16px 0
-}
-.goog-char-picker-input-box {
-	width: 96px
-}
-.label-input-label {
-	color: GrayText
-}
+.goog-char-picker-notice {font-size: x-small;height: 16px;color: GrayText;margin: 0 0 16px 0}
+.goog-char-picker-input-box {width: 96px}
+.label-input-label {color: GrayText}
 .goog-char-picker-grid .goog-flat-button {
 	position: relative;
 	width: 24px;
@@ -245,16 +128,8 @@ span.CSS_SHORTCUTS_HELP_POPUP_KEY_MNEMONIC {
 	outline: none;
 	-moz-outline: none
 }
-.goog-char-picker-grid .goog-flat-button-hover {
-	background-color: #ffcc33
-}
-.goog-char-picker-button {
-	border-width: 0;
-	margin: 0;
-	padding: 0;
-	position: absolute;
-	background-position: center left
-}
+.goog-char-picker-grid .goog-flat-button-hover {background-color: #ffcc33}
+.goog-char-picker-button {border-width: 0;margin: 0;padding: 0;position: absolute;background-position: center left}
 .goog-char-picker-menu {
 	background-color: #fff;
 	border-color: #ccc #666 #666 #ccc;
@@ -292,44 +167,13 @@ span.CSS_SHORTCUTS_HELP_POPUP_KEY_MNEMONIC {
 	padding: 3px 32px 3px 8px;
 	white-space: nowrap
 }
-.goog-char-picker-menu .goog-menuitem-rtl {
-	padding: 2px 16px 2px 32px!important
-}
-.goog-char-picker-menu .goog-menuitem-highlight {
-	background-color: #d6e9f8
-}
-.goog-char-picker-menu .goog-menuseparator {
-	border-top: 1px solid #ccc;
-	margin: 2px 0;
-	padding: 0
-}
-.modal-dialog {
-	background: #c1d9ff;
-	border: 1px solid #3a5774;
-	color: #000;
-	padding: 4px;
-	position: absolute
-}
-.modal-dialog a,.modal-dialog a:link,.modal-dialog a:visited {
-	color: #06c;
-	cursor: pointer
-}
-.modal-dialog-bg {
-	background: #666;
-	left: 0;
-	position: absolute;
-	top: 0
-}
-.modal-dialog-title {
-	background: #e0edfe;
-	color: #000;
-	cursor: pointer;
-	font-size: 120%;
-	font-weight: bold;
-	padding: 8px 15px 8px 8px;
-	position: relative;
-	_zoom: 1;
-}
+.goog-char-picker-menu .goog-menuitem-rtl {padding: 2px 16px 2px 32px!important}
+.goog-char-picker-menu .goog-menuitem-highlight {background-color: #d6e9f8}
+.goog-char-picker-menu .goog-menuseparator {border-top: 1px solid #ccc;margin: 2px 0;padding: 0}
+.modal-dialog {background: #c1d9ff;border: 1px solid #3a5774;color: #000;padding: 4px;position: absolute}
+.modal-dialog a,.modal-dialog a:link,.modal-dialog a:visited {color: #06c;cursor: pointer}
+.modal-dialog-bg {background: #666;left: 0;position: absolute;top: 0
+.modal-dialog-title {background: #e0edfe;color: #000;cursor: pointer;font-size: 120%;font-weight: bold;padding: 8px 15px 8px 8px;position: relative;_zoom: 1;}
 .modal-dialog-title-close {
 	background: #e0edfe url(../images/editortoolbar.png) no-repeat -528px 0;
 	cursor: default;
@@ -344,31 +188,12 @@ span.CSS_SHORTCUTS_HELP_POPUP_KEY_MNEMONIC {
 	background-color: #fff;
 	padding: 8px
 }
-.goog-buttonset-default {
-	font-weight: bold
-}
-.goog-dimension-picker {
-	font-size: 18px;
-	padding: 4px
-}
-.goog-dimension-picker div {
-	position: relative
-}
-.goog-dimension-picker div.goog-dimension-picker-highlighted {
-	left: 0;
-	overflow: hidden;
-	position: absolute;
-	top: 0
-}
-.goog-dimension-picker-status {
-	font-size: 10pt;
-	text-align: center
-}
-.goog-dimension-picker div.goog-dimension-picker-mousecatcher {
-	left: 0;
-	position: absolute!important;
-	top: 0
-}
+.goog-buttonset-default {font-weight: bold}
+.goog-dimension-picker {font-size: 18px;padding: 4px}
+.goog-dimension-picker div {position: relative}
+.goog-dimension-picker div.goog-dimension-picker-highlighted {left: 0;overflow: hidden;position: absolute;top: 0}
+.goog-dimension-picker-status {font-size: 10pt;text-align: center}
+.goog-dimension-picker div.goog-dimension-picker-mousecatcher {left: 0;position: absolute!important;top: 0}
 .goog-menu {
 	background: #fff;
 	border-color: #ccc #666 #666 #ccc;
@@ -387,12 +212,8 @@ span.CSS_SHORTCUTS_HELP_POPUP_KEY_MNEMONIC {
 	display: -moz-inline-box;
 	display: inline-block
 }
-* html .goog-inline-block {
-	display: inline
-}
-*:first-child+html .goog-inline-block {
-	display: inline
-}
+* html .goog-inline-block {display: inline}
+*:first-child+html .goog-inline-block {display: inline}
 .goog-menu-button {
 	background: #ddd url(../images/button-bg.png) repeat-x top left;
 	border: 0;
@@ -405,76 +226,27 @@ span.CSS_SHORTCUTS_HELP_POPUP_KEY_MNEMONIC {
 	text-decoration: none;
 	vertical-align: middle
 }
-.goog-menu-button-outer-box,.goog-menu-button-inner-box {
-	border-style: solid;
-	border-color: #aaa;
-	vertical-align: top
-}
-.goog-menu-button-outer-box {
-	margin: 0;
-	border-width: 1px 0;
-	padding: 0
-}
-.goog-menu-button-inner-box {
-	margin: 0 -1px;
-	border-width: 0 1px;
-	padding: 3px 4px
-}
-* html .goog-menu-button-inner-box {
-	left: -1px
-}
-* html .goog-menu-button-rtl .goog-menu-button-outer-box {
-	left: -1px;
-	right: auto
-}
-* html .goog-menu-button-rtl .goog-menu-button-inner-box {
-	right: auto
-}
-*:first-child+html .goog-menu-button-inner-box {
-	left: -1px
-}
-*:first-child+html .goog-menu-button-rtl .goog-menu-button-inner-box {
-	left: 1px;
-	right: auto
-}
-::root .goog-menu-button,::root .goog-menu-button-outer-box,::root .goog-menu-button-inner-box {
-	line-height: 0
-}
-::root .goog-menu-button-caption,::root .goog-menu-button-dropdown {
-	line-height: normal
-}
-.goog-menu-button-disabled {
-	background-image: none!important;
-	opacity: 0.3;
-	-moz-opacity: 0.3;
-	filter: alpha(opacity=30)
-}
+.goog-menu-button-outer-box,.goog-menu-button-inner-box {border-style: solid;border-color: #aaa;vertical-align: top}
+.goog-menu-button-outer-box {margin: 0;border-width: 1px 0;padding: 0}
+.goog-menu-button-inner-box {margin: 0 -1px;border-width: 0 1px;padding: 3px 4px}
+* html .goog-menu-button-inner-box {left: -1px}
+* html .goog-menu-button-rtl .goog-menu-button-outer-box {left: -1px;right: auto}
+* html .goog-menu-button-rtl .goog-menu-button-inner-box {right: auto}
+*:first-child+html .goog-menu-button-inner-box {left: -1px}
+*:first-child+html .goog-menu-button-rtl .goog-menu-button-inner-box {left: 1px;right: auto}
+::root .goog-menu-button,::root .goog-menu-button-outer-box,::root .goog-menu-button-inner-box {line-height: 0}
+::root .goog-menu-button-caption,::root .goog-menu-button-dropdown {line-height: normal}
+.goog-menu-button-disabled {background-image: none!important;opacity: 0.3;-moz-opacity: 0.3;filter: alpha(opacity=30)}
 .goog-menu-button-disabled .goog-menu-button-outer-box,.goog-menu-button-disabled .goog-menu-button-inner-box,.goog-menu-button-disabled .goog-menu-button-caption,.goog-menu-button-disabled .goog-menu-button-dropdown {
 	color: #333!important;
 	border-color: #999!important
 }
-* html .goog-menu-button-disabled {
-	margin: 2px 1px!important;
-	padding: 0 1px!important
-}
-*:first-child+html .goog-menu-button-disabled {
-	margin: 2px 1px!important;
-	padding: 0 1px!important
-}
-.goog-menu-button-hover .goog-menu-button-outer-box,.goog-menu-button-hover .goog-menu-button-inner-box {
-	border-color: #9cf #69e #69e #7af!important;
-}
-.goog-menu-button-active,.goog-menu-button-open {
-	background-color: #bbb;
-	background-position: bottom left
-}
-.goog-menu-button-focused .goog-menu-button-outer-box,.goog-menu-button-focused .goog-menu-button-inner-box {
-	border-color: orange
-}
-.goog-menu-button-caption {
-	padding: 0 4px 0 0;
-	vertical-align: top
-}
+* html .goog-menu-button-disabled {margin: 2px 1px!important;padding: 0 1px!important}
+*:first-child+html .goog-menu-button-disabled {margin: 2px 1px!important;padding: 0 1px!important}
+.goog-menu-button-hover .goog-menu-button-outer-box,.goog-menu-button-hover .goog-menu-button-inner-box {border-color: #9cf #69e #69e #7af!important;}
+.goog-menu-button-active,.goog-menu-button-open {background-color: #bbb;background-position: bottom left}
+.goog-menu-button-focused .goog-menu-button-outer-box,.goog-menu-button-focused .goog-menu-button-inner-box {border-color: orange}
+.goog-menu-button-caption {padding: 0 4px 0 0;vertical-align: top}
 .goog-menu-button-dropdown {
 	height: 16px;
 	width: 7px;
@@ -487,12 +259,8 @@ span.CSS_SHORTCUTS_HELP_POPUP_KEY_MNEMONIC {
 .goog-menu-button-collapse-left,.goog-menu-button-collapse-left .goog-menu-button-outer-box,.goog-menu-button-collapse-left .goog-menu-button-inner-box {
 	margin-left: 0
 }
-.goog-menu-button-collapse-left .goog-menu-button-inner-box {
-	border-left: 1px solid #fff
-}
-.goog-menu-button-collapse-left.goog-menu-button-checked .goog-menu-button-inner-box {
-	border-left: 1px solid #ddd
-}
+.goog-menu-button-collapse-left .goog-menu-button-inner-box {border-left: 1px solid #fff}
+.goog-menu-button-collapse-left.goog-menu-button-checked .goog-menu-button-inner-box {border-left: 1px solid #ddd}
 .goog-menuitem {
 	color: #000;
 	font: normal 13px Arial,sans-serif;
@@ -501,24 +269,11 @@ span.CSS_SHORTCUTS_HELP_POPUP_KEY_MNEMONIC {
 	padding: 4px 7em 4px 28px;
 	white-space: nowrap
 }
-.goog-menu-nocheckbox .goog-menuitem,.goog-menu-noicon .goog-menuitem {
-	padding-left: 12px
-}
-.goog-menu-noaccel .goog-menuitem {
-	padding-right: 20px
-}
-.goog-menuitem-content {
-	color: #000;
-	font: normal 13px Arial,sans-serif
-}
-.goog-menuitem-disabled .goog-menuitem-accel,.goog-menuitem-disabled .goog-menuitem-content {
-	color: #ccc!important
-}
-.goog-menuitem-disabled .goog-menuitem-icon {
-	opacity: 0.3;
-	-moz-opacity: 0.3;
-	filter: alpha(opacity=30)
-}
+.goog-menu-nocheckbox .goog-menuitem,.goog-menu-noicon .goog-menuitem {padding-left: 12px}
+.goog-menu-noaccel .goog-menuitem {padding-right: 20px}
+.goog-menuitem-content {color: #000;font: normal 13px Arial,sans-serif}
+.goog-menuitem-disabled .goog-menuitem-accel,.goog-menuitem-disabled .goog-menuitem-content {color: #ccc!important}
+.goog-menuitem-disabled .goog-menuitem-icon {opacity: 0.3;-moz-opacity: 0.3;filter: alpha(opacity=30)}
 .goog-menuitem-highlight,.goog-menuitem-hover {
 	background-color: #d6e9f8;
 	border-color: #d6e9f8;
@@ -536,34 +291,11 @@ span.CSS_SHORTCUTS_HELP_POPUP_KEY_MNEMONIC {
 	vertical-align: middle;
 	width: 16px
 }
-.goog-option-selected .goog-menuitem-checkbox,.goog-option-selected .goog-menuitem-icon {
-	background: url(../images/editortoolbar.png) no-repeat -512px 0
-}
-.goog-menuitem-accel {
-	color: #999;
-	direction: ltr;
-	left: auto;
-	padding: 0 6px;
-	position: absolute;
-	right: 0;
-	text-align: right
-}
-.goog-menuseparator {
-	border-top: 1px solid #ccc;
-	margin: 4px 0;
-	padding: 0
-}
-.goog-submenu-arrow {
-	color: #000;
-	left: auto;
-	padding-right: 6px;
-	position: absolute;
-	right: 0;
-	text-align: right
-}
-.goog-menuitem-disabled .goog-submenu-arrow {
-	color: #ccc
-}
+.goog-option-selected .goog-menuitem-checkbox,.goog-option-selected .goog-menuitem-icon {background: url(../images/editortoolbar.png) no-repeat -512px 0}
+.goog-menuitem-accel {color: #999;direction: ltr;left: auto;padding: 0 6px;position: absolute;right: 0;text-align: right}
+.goog-menuseparator {border-top: 1px solid #ccc;margin: 4px 0;padding: 0}
+.goog-submenu-arrow {color: #000;left: auto;padding-right: 6px;position: absolute;right: 0;text-align: right}
+.goog-menuitem-disabled .goog-submenu-arrow {color: #ccc}
 .goog-toolbar {
 	background: #fafafa url(../images/toolbar-bg.png) repeat-x bottom left;
 	border-bottom: 1px solid #d5d5d5;
@@ -587,59 +319,23 @@ span.CSS_SHORTCUTS_HELP_POPUP_KEY_MNEMONIC {
 	cursor: default;
 	outline: none
 }
-.goog-toolbar-button-outer-box,.goog-toolbar-button-inner-box {
-	border: 0;
-	vertical-align: top
-}
-.goog-toolbar-button-outer-box {
-	margin: 0;
-	padding: 1px 0
-}
-.goog-toolbar-button-inner-box {
-	margin: 0 -1px;
-	padding: 3px 4px
-}
-* html .goog-toolbar-button-inner-box {
-	left: -1px
-}
-* html .goog-toolbar-button-rtl .goog-toolbar-button-outer-box {
-	left: -1px
-}
-* html .goog-toolbar-button-rtl .goog-toolbar-button-inner-box {
-	right: auto
-}
-*:first-child+html .goog-toolbar-button-inner-box {
-	left: -1px
-}
-*:first-child+html .goog-toolbar-button-rtl .goog-toolbar-button-inner-box {
-	left: 1px;
-	right: auto
-}
-::root .goog-toolbar-button,::root .goog-toolbar-button-outer-box {
-	line-height: 0
-}
-::root .goog-toolbar-button-inner-box {
-	line-height: normal
-}
-.goog-toolbar-button-disabled {
-	opacity: 0.3;
-	-moz-opacity: 0.3;
-	filter: alpha(opacity=30)
-}
+.goog-toolbar-button-outer-box,.goog-toolbar-button-inner-box {border: 0;vertical-align: top}
+.goog-toolbar-button-outer-box {margin: 0;padding: 1px 0}
+.goog-toolbar-button-inner-box {margin: 0 -1px;padding: 3px 4px}
+* html .goog-toolbar-button-inner-box {left: -1px}
+* html .goog-toolbar-button-rtl .goog-toolbar-button-outer-box {left: -1px}
+* html .goog-toolbar-button-rtl .goog-toolbar-button-inner-box {right: auto}
+*:first-child+html .goog-toolbar-button-inner-box {left: -1px}
+*:first-child+html .goog-toolbar-button-rtl .goog-toolbar-button-inner-box {left: 1px;right: auto}
+::root .goog-toolbar-button,::root .goog-toolbar-button-outer-box {line-height: 0}
+::root .goog-toolbar-button-inner-box {line-height: normal}
+.goog-toolbar-button-disabled {opacity: 0.3;-moz-opacity: 0.3;filter: alpha(opacity=30)}
 .goog-toolbar-button-disabled .goog-toolbar-button-outer-box,.goog-toolbar-button-disabled .goog-toolbar-button-inner-box {
 	color: #333!important;
 	border-color: #999!important
 }
-* html .goog-toolbar-button-disabled {
-	background-color: #f0f0f0;
-	margin: 0 1px;
-	padding: 0 1px
-}
-*:first-child+html .goog-toolbar-button-disabled {
-	background-color: #f0f0f0;
-	margin: 0 1px;
-	padding: 0 1px
-}
+* html .goog-toolbar-button-disabled {background-color: #f0f0f0;margin: 0 1px;padding: 0 1px}
+*:first-child+html .goog-toolbar-button-disabled {background-color: #f0f0f0;margin: 0 1px;padding: 0 1px}
 .goog-toolbar-button-hover .goog-toolbar-button-outer-box,.goog-toolbar-button-active .goog-toolbar-button-outer-box,.goog-toolbar-button-checked .goog-toolbar-button-outer-box,.goog-toolbar-button-selected .goog-toolbar-button-outer-box {
 	border-width: 1px 0;
 	border-style: solid;
@@ -665,77 +361,28 @@ span.CSS_SHORTCUTS_HELP_POPUP_KEY_MNEMONIC {
 .goog-toolbar-button-collapse-left,.goog-toolbar-button-collapse-left .goog-toolbar-button-outer-box,.goog-toolbar-button-collapse-left .goog-toolbar-button-inner-box {
 	margin-left: 0
 }
-* html .goog-toolbar-button-collapse-left .goog-toolbar-button-inner-box {
-	left: 0
-}
-*:first-child+html .goog-toolbar-button-collapse-left .goog-toolbar-button-inner-box {
-	left: 0
-}
-.goog-toolbar-menu-button {
-	margin: 0 2px;
-	border: 0;
-	padding: 0;
-	font-family: Arial,sans-serif;
-	color: #333;
-	text-decoration: none;
-	list-style: none;
-	vertical-align: middle;
-	cursor: default;
-	outline: none
-}
-.goog-toolbar-menu-button-outer-box,.goog-toolbar-menu-button-inner-box {
-	border: 0;
-	vertical-align: top
-}
-.goog-toolbar-menu-button-outer-box {
-	margin: 0;
-	padding: 1px 0
-}
-.goog-toolbar-menu-button-inner-box {
-	margin: 0 -1px;
-	padding: 3px 4px
-}
-* html .goog-toolbar-menu-button-inner-box {
-	left: -1px
-}
-* html .goog-toolbar-menu-button-rtl .goog-toolbar-menu-button-outer-box {
-	left: -1px
-}
-* html .goog-toolbar-menu-button-rtl .goog-toolbar-menu-button-inner-box {
-	right: auto
-}
-*:first-child+html .goog-toolbar-menu-button-inner-box {
-	left: -1px
-}
-*:first-child+html .goog-toolbar-menu-button-rtl .goog-toolbar-menu-button-inner-box {
-	left: 1px;
-	right: auto
-}
+* html .goog-toolbar-button-collapse-left .goog-toolbar-button-inner-box {left: 0}
+*:first-child+html .goog-toolbar-button-collapse-left .goog-toolbar-button-inner-box {left: 0}
+.goog-toolbar-menu-button {margin: 0 2px;border: 0;padding: 0;font-family: Arial,sans-serif;color: #333;text-decoration: none;list-style: none;vertical-align: middle;cursor: default;outline: none}
+.goog-toolbar-menu-button-outer-box,.goog-toolbar-menu-button-inner-box {border: 0;vertical-align: top}
+.goog-toolbar-menu-button-outer-box {margin: 0;padding: 1px 0}
+.goog-toolbar-menu-button-inner-box {margin: 0 -1px;padding: 3px 4px}
+* html .goog-toolbar-menu-button-inner-box {left: -1px}
+* html .goog-toolbar-menu-button-rtl .goog-toolbar-menu-button-outer-box {left: -1px}
+* html .goog-toolbar-menu-button-rtl .goog-toolbar-menu-button-inner-box {right: auto}
+*:first-child+html .goog-toolbar-menu-button-inner-box {left: -1px}
+*:first-child+html .goog-toolbar-menu-button-rtl .goog-toolbar-menu-button-inner-box {left: 1px;right: auto}
 ::root .goog-toolbar-menu-button,::root .goog-toolbar-menu-button-outer-box,::root .goog-toolbar-menu-button-inner-box {
 	line-height: 0
 }
-::root .goog-toolbar-menu-button-caption,::root .goog-toolbar-menu-button-dropdown {
-	line-height: normal
-}
-.goog-toolbar-menu-button-disabled {
-	opacity: 0.3;
-	-moz-opacity: 0.3;
-	filter: alpha(opacity=30)
-}
+::root .goog-toolbar-menu-button-caption,::root .goog-toolbar-menu-button-dropdown {line-height: normal}
+.goog-toolbar-menu-button-disabled {opacity: 0.3;-moz-opacity: 0.3;filter: alpha(opacity=30)}
 .goog-toolbar-menu-button-disabled .goog-toolbar-menu-button-outer-box,.goog-toolbar-menu-button-disabled .goog-toolbar-menu-button-inner-box {
 	color: #333!important;
 	border-color: #999!important
 }
-* html .goog-toolbar-menu-button-disabled {
-	background-color: #f0f0f0;
-	margin: 0 1px;
-	padding: 0 1px
-}
-*:first-child+html .goog-toolbar-menu-button-disabled {
-	background-color: #f0f0f0;
-	margin: 0 1px;
-	padding: 0 1px
-}
+* html .goog-toolbar-menu-button-disabled {background-color: #f0f0f0;margin: 0 1px;padding: 0 1px}
+*:first-child+html .goog-toolbar-menu-button-disabled {background-color: #f0f0f0;margin: 0 1px;padding: 0 1px}
 .goog-toolbar-menu-button-hover .goog-toolbar-menu-button-outer-box,.goog-toolbar-menu-button-active .goog-toolbar-menu-button-outer-box,.goog-toolbar-menu-button-open .goog-toolbar-menu-button-outer-box {
 	border-width: 1px 0;
 	border-style: solid;
@@ -749,21 +396,12 @@ span.CSS_SHORTCUTS_HELP_POPUP_KEY_MNEMONIC {
 .goog-toolbar-menu-button-hover .goog-toolbar-menu-button-outer-box,.goog-toolbar-menu-button-hover .goog-toolbar-menu-button-inner-box {
 	border-color: #a1badf!important
 }
-.goog-toolbar-menu-button-active,.goog-toolbar-menu-button-open {
-	background-color: #dde1eb!important
-}
+.goog-toolbar-menu-button-active,.goog-toolbar-menu-button-open {background-color: #dde1eb!important}
 .goog-toolbar-menu-button-active .goog-toolbar-menu-button-outer-box,.goog-toolbar-menu-button-active .goog-toolbar-menu-button-inner-box,.goog-toolbar-menu-button-open .goog-toolbar-menu-button-outer-box,.goog-toolbar-menu-button-open .goog-toolbar-menu-button-inner-box {
 	border-color: #729bd1
 }
-.goog-toolbar-menu-button-caption {
-	padding: 0 4px 0 0;
-	vertical-align: middle
-}
-.goog-toolbar-menu-button-dropdown {
-	width: 7px;
-	background: url(../images/editortoolbar.png) no-repeat -388px 0;
-	vertical-align: middle
-}
+.goog-toolbar-menu-button-caption {padding: 0 4px 0 0;vertical-align: middle}
+.goog-toolbar-menu-button-dropdown {width: 7px;background: url(../images/editortoolbar.png) no-repeat -388px 0;vertical-align: middle}
 .goog-toolbar-separator {
 	margin: 0 2px;
 	border-left: 1px solid #d6d6d6;
@@ -778,30 +416,13 @@ span.CSS_SHORTCUTS_HELP_POPUP_KEY_MNEMONIC {
 	font-size: 120%;
 	overflow: hidden
 }
-.goog-toolbar-select .goog-toolbar-menu-button-outer-box {
-	border-width: 1px 0;
-	border-style: solid;
-	padding: 0
-}
-.goog-toolbar-select .goog-toolbar-menu-button-inner-box {
-	border-width: 0 1px;
-	border-style: solid;
-	padding: 3px
-}
+.goog-toolbar-select .goog-toolbar-menu-button-outer-box {border-width: 1px 0;border-style: solid;padding: 0}
+.goog-toolbar-select .goog-toolbar-menu-button-inner-box {border-width: 0 1px;border-style: solid;padding: 3px}
 .goog-toolbar-select .goog-toolbar-menu-button-outer-box,.goog-toolbar-select .goog-toolbar-menu-button-inner-box {
 	border-color: #bfcbdf
 }
-.goog-tooltip {
-	background: infobackground;
-	border: 1px solid infotext;
-	color: infotext;
-	font: menu;
-	padding: 1px;
-	z-index: 30000
-}
-.docs-clipboard-clearall {
-	font-weight: bold
-}
+.goog-tooltip {background: infobackground;border: 1px solid infotext;color: infotext;font: menu;padding: 1px;z-index: 30000}
+.docs-clipboard-clearall {font-weight: bold}
 .docs-clipboard-preview {
 	position: absolute;
 	background-color: #fff;
@@ -818,20 +439,9 @@ span.CSS_SHORTCUTS_HELP_POPUP_KEY_MNEMONIC {
 	top: 0;
 	z-index: 9999
 }
-.docs-clipboard-preview iframe {
-	border: 0;
-	padding: 0;
-	margin: 0;
-	width: 100%;
-	height: 100%;
-	vertical-align: top
-}
-.docs-dialog-alert {
-	width: 400px
-}
-.docs-dialog-modal-bg {
-	z-index: 999
-}
+.docs-clipboard-preview iframe {border: 0;padding: 0;margin: 0;width: 100%;height: 100%;vertical-align: top}
+.docs-dialog-alert {width: 400px}
+.docs-dialog-modal-bg {z-index: 999}
 .apps-marquee {
 	font: bold 13px Arial,sans-serif;
 	height: 0;
@@ -849,87 +459,27 @@ span.CSS_SHORTCUTS_HELP_POPUP_KEY_MNEMONIC {
 	margin: 0 5px 4px;
 	color: #fff999;
 }
-.apps-marquee-text {
-	background: #fff999;
-	border-color: #fff999;
-	border-style: solid;
-	border-width: 0 3px;
-	color: black;
-	padding: 2px 5px 2px
-}
-.apps-marquee-round-bottom {
-	border-left: 3px dotted transparent;
-	border-right: 3px dotted transparent;
-	border-top: 3px solid
-}
-.apps-marquee-round-top {
-	border-left: 3px dotted transparent;
-	border-right: 3px dotted transparent;
-	border-bottom: 3px solid
-}
-.apps-marquee-warning {
-	color: #a00
-}
-.apps-marquee-warning .apps-marquee-text {
-	background: #a00;
-	border-color: #a00;
-	color: white
-}
-.docs-error-dialog {
-	width: 50%
-}
-.docs-printpreview-toolbar {
-	border-top: 2px solid #d7d7d7
-}
-.docs-printpreview-frame-backing {
-	background-color: #f3f3f3;
-	z-index: 800;
-	position: relative
-}
-.pub-dialog {
-	padding: 8px
-}
-.pub-dialog-content {
-	overflow-x: auto
-}
-.pub-dialog-header {
-	font-weight: bold;
-	padding: 5px 0 5px 0
-}
-.pub-dialog-document-link {
-	width: 450px
-}
-.pub-dialog-embed-code {
-	font: 13px Arial,sans-serif;
-	width: 453px
-}
-.pub-dialog-disabled-text {
-	color: #afafaf
-}
-.pub-dialog-wrap {
-	font: 13px Arial,sans-serif;
-	width: 500px
-}
-.pub-dialog-content-div {
-	padding: 0 0 10px 30px
-}
-.pub-dialog-hr {
-	color: #bfbfbf
-}
-.pub-dialog-hr-div {
-	padding: 2px 0
-}
-.pub-dialog-input-div {
-	padding-bottom: 15px
-}
-.pub-dialog-option-vspacer {
-	height: 5px
-}
-.pub-dialog-buttons {
-	padding-left: 38px;
-	padding-top: 0;
-	text-align: left
-}
+.apps-marquee-text {background: #fff999;border-color: #fff999;border-style: solid;border-width: 0 3px;color: black;padding: 2px 5px 2px}
+.apps-marquee-round-bottom {border-left: 3px dotted transparent;border-right: 3px dotted transparent;border-top: 3px solid}
+.apps-marquee-round-top {border-left: 3px dotted transparent;border-right: 3px dotted transparent;border-bottom: 3px solid}
+.apps-marquee-warning {color: #a00}
+.apps-marquee-warning .apps-marquee-text {background: #a00;border-color: #a00;color: white}
+.docs-error-dialog {width: 50%}
+.docs-printpreview-toolbar {border-top: 2px solid #d7d7d7}
+.docs-printpreview-frame-backing {background-color: #f3f3f3;z-index: 800;position: relative}
+.pub-dialog {padding: 8px}
+.pub-dialog-content {overflow-x: auto}
+.pub-dialog-header {font-weight: bold;padding: 5px 0 5px 0}
+.pub-dialog-document-link {width: 450px}
+.pub-dialog-embed-code {font: 13px Arial,sans-serif;width: 453px}
+.pub-dialog-disabled-text {color: #afafaf}
+.pub-dialog-wrap {font: 13px Arial,sans-serif;width: 500px}
+.pub-dialog-content-div {padding: 0 0 10px 30px}
+.pub-dialog-hr {color: #bfbfbf}
+.pub-dialog-hr-div {padding: 2px 0}
+.pub-dialog-input-div {padding-bottom: 15px}
+.pub-dialog-option-vspacer {height: 5px}
+.pub-dialog-buttons {padding-left: 38px;padding-top: 0;text-align: left}
 .sketchy-dialog-bg,.sketchy-dialog-fg {
 	left: 0;
 	overflow: auto;
@@ -1052,21 +602,11 @@ span.CSS_SHORTCUTS_HELP_POPUP_KEY_MNEMONIC {
 	margin-right: 4px;
 	vertical-align: bottom
 }
-.share-pill-public-icon {
-	background-position: -304px 0
-}
-.share-pill-unlisted-icon {
-	background-position: -320px 0
-}
-.share-pill-domain-public-icon {
-	background-position: -336px 0
-}
-.share-pill-domain-unlisted-icon {
-	background-position: -352px 0
-}
-.share-pill-private-icon {
-	background-position: -368px 0
-}
+.share-pill-public-icon {background-position: -304px 0}
+.share-pill-unlisted-icon {background-position: -320px 0}
+.share-pill-domain-public-icon {background-position: -336px 0}
+.share-pill-domain-unlisted-icon {background-position: -352px 0}
+.share-pill-private-icon {background-position: -368px 0}
 .share-pill-icon-hover {
 	background: infobackground;
 	border: 1px solid infotext;
@@ -1075,46 +615,17 @@ span.CSS_SHORTCUTS_HELP_POPUP_KEY_MNEMONIC {
 	padding: 1px;
 	z-index: 30000
 }
-.share-client-promo {
-	font-size: 13px
-}
-.share-client-promo-heading {
-	font-weight: bold
-}
-.share-client-promo-desc {
-	color: #666
-}
-.share-client-promo-section {
-	padding-bottom: 10px
-}
-.share-client-promo-subsection {
-	padding-bottom: 8px
-}
-.share-client-promo .apps-promo-arrow {
-	background: url(../images/promo_arrows-0.png) no-repeat
-}
-.share-client-promo .apps-promo-close {
-	background: url(../images/promo_close-0.png) no-repeat
-}
-.share-client-promo .apps-promo-popup {
-	width: 300px
-}
-.share-client-promo .apps-promo-buttons {
-	padding: 0
-}
-.share-sharebutton-people-icon {
-	width: 16px;
-	height: 16px;
-	background-repeat: no-repeat;
-	background-position: 0 0;
-	vertical-align: text-bottom;
-	margin-right: 0
-}
-.share-client-dialog {
-	max-height: 100%;
-	overflow: auto;
-	width: auto
-}
+.share-client-promo {font-size: 13px}
+.share-client-promo-heading {font-weight: bold}
+.share-client-promo-desc {color: #666}
+.share-client-promo-section {padding-bottom: 10px}
+.share-client-promo-subsection {padding-bottom: 8px}
+.share-client-promo .apps-promo-arrow {background: url(../images/promo_arrows-0.png) no-repeat}
+.share-client-promo .apps-promo-close {background: url(../images/promo_close-0.png) no-repeat}
+.share-client-promo .apps-promo-popup {width: 300px}
+.share-client-promo .apps-promo-buttons {padding: 0}
+.share-sharebutton-people-icon {width: 16px;height: 16px;background-repeat: no-repeat;background-position: 0 0;vertical-align: text-bottom;margin-right: 0}
+.share-client-dialog {max-height: 100%;overflow: auto;width: auto}
 * html .share-client-dialog {
 	max-height: none!important;
 	overflow: visible!important
@@ -1123,120 +634,33 @@ span.CSS_SHORTCUTS_HELP_POPUP_KEY_MNEMONIC {
 	max-height: none!important;
 	overflow: visible!important
 }
-.share-client-dialog .modal-dialog-content {
-	padding: 0
-}
-.share-client-dialog iframe {
-	height: 100%;
-	width: 100%;
-	border: none
-}
-.share-client-dialog .modal-dialog-buttons {
-	display: none
-}
-.share-client-error-dialog {
-	width: 400px
-}
-.share-client-error-dialog .modal-dialog-title {
-	display: none
-}
-.share-client-error-dialog .modal-dialog-content {
-	padding: 8px
-}
-.apps-share-sprite {
-	background-image: url(../images/icons-4.png)
-}
-.share-menu-invite-icon {
-	background-position: 0 0
-}
-.share-menu-view-icon {
-	background-position: -16px 0
-}
-.share-menu-domain-icon {
-	background-position: -48px 0
-}
-.share-menu-link-icon {
-	background-position: -288px 0
-}
-.share-menu-hint {
-	color: #888
-}
-.goog-tab {
-	background: #ddd;
-	border: 1px solid #369;
-	color: #333;
-	cursor: default;
-	padding: 4px 8px;
-	position: relative
-}
-.goog-tab-bar-top .goog-tab {
-	border-bottom: 0;
-	float: left;
-	margin: 1px 4px 0 0
-}
-.goog-tab-bar-bottom .goog-tab {
-	border-top: 0;
-	float: left;
-	margin: 0 4px 1px 0
-}
-.goog-tab-bar-start .goog-tab {
-	border-right: 0;
-	margin: 0 0 4px 1px
-}
-.goog-tab-bar-end .goog-tab {
-	border-left: 0;
-	margin: 0 1px 4px 0
-}
-.goog-tab-hover {
-	background: #eee
-}
-.goog-tab-disabled {
-	background: #ccc;
-	border-color: #ccc;
-	color: #fff
-}
-.goog-tab-selected {
-	background: #fff!important;
-}
-.goog-tab-bar-top .goog-tab-selected {
-	margin-top: 0;
-	padding-bottom: 5px;
-	top: 1px
-}
-.goog-tab-bar-bottom .goog-tab-selected {
-	margin-bottom: 0;
-	padding-top: 5px;
-	top: -1px
-}
-.goog-tab-bar-start .goog-tab-selected {
-	left: 1px;
-	margin-left: 0;
-	padding-right: 9px
-}
-.goog-tab-bar-end .goog-tab-selected {
-	left: -1px;
-	margin-right: 0;
-	padding-left: 9px
-}
-.goog-palette {
-	cursor: default;
-	outline: none
-}
-.goog-palette-table {
-	border: 1px solid #666;
-	border-collapse: collapse;
-	margin: 5px
-}
-.goog-palette-cell {
-	border: 0;
-	border-right: 1px solid #666;
-	cursor: pointer;
-	height: 18px;
-	margin: 0;
-	text-align: center;
-	vertical-align: middle;
-	width: 18px
-}
+.share-client-dialog .modal-dialog-content {padding: 0}
+.share-client-dialog iframe {height: 100%;width: 100%;border: none}
+.share-client-dialog .modal-dialog-buttons {display: none}
+.share-client-error-dialog {width: 400px}
+.share-client-error-dialog .modal-dialog-title {display: none}
+.share-client-error-dialog .modal-dialog-content {padding: 8px}
+.apps-share-sprite {background-image: url(../images/icons-4.png)}
+.share-menu-invite-icon {background-position: 0 0}
+.share-menu-view-icon {background-position: -16px 0}
+.share-menu-domain-icon {background-position: -48px 0}
+.share-menu-link-icon {background-position: -288px 0}
+.share-menu-hint {color: #888}
+.goog-tab {background: #ddd;border: 1px solid #369;color: #333;cursor: default;padding: 4px 8px;position: relative}
+.goog-tab-bar-top .goog-tab {border-bottom: 0;float: left;margin: 1px 4px 0 0}
+.goog-tab-bar-bottom .goog-tab {border-top: 0;float: left;margin: 0 4px 1px 0}
+.goog-tab-bar-start .goog-tab {border-right: 0;margin: 0 0 4px 1px}
+.goog-tab-bar-end .goog-tab {border-left: 0;margin: 0 1px 4px 0}
+.goog-tab-hover {background: #eee}
+.goog-tab-disabled {background: #ccc;border-color: #ccc;color: #fff}
+.goog-tab-selected {background: #fff!important;}
+.goog-tab-bar-top .goog-tab-selected {margin-top: 0;padding-bottom: 5px;top: 1px}
+.goog-tab-bar-bottom .goog-tab-selected {margin-bottom: 0;padding-top: 5px;top: -1px}
+.goog-tab-bar-start .goog-tab-selected {left: 1px;margin-left: 0;padding-right: 9px}
+.goog-tab-bar-end .goog-tab-selected {left: -1px;margin-right: 0;padding-left: 9px}
+.goog-palette {cursor: default;outline: none}
+.goog-palette-table {border: 1px solid #666;border-collapse: collapse;margin: 5px}
+.goog-palette-cell {border: 0;border-right: 1px solid #666;cursor: pointer;height: 18px;margin: 0;text-align: center;vertical-align: middle;width: 18px}
 .goog-palette-cell .goog-palette-colorswatch {
 	border: none;
 	font-size: x-small;
