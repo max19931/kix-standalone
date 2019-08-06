@@ -20,7 +20,7 @@ function KX_startKix() {
         'cpn': 15,
         'crn': 15,
         'csie': [],
-        'docid': '1cvpdwalTnnKrvnNfWwsFl0FhRroACH5uY0_pfciZqWI',
+        'docid': '',
         'domain': '',
         'durl': 'http://docs.google.com/drawings',
         'ear': true,
