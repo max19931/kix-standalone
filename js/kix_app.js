@@ -3,17 +3,13 @@ function aK(a, b, c) {
     this.a = b || a;
     this.UP = c || a
 }
-aK.prototype.od = function () {
-    return this.f
-};
-
+aK.prototype.od = function () {return this.f};
 function bK(a) {
     Gb.call(this);
     this.a = a
 }
 s(bK, Gb);
 bK.prototype.message = "Deferred was cancelled";
-
 function ira(a) {
     return function () {
         return a.call(this)
@@ -34,18 +30,14 @@ function jra(a, b, c, d) {
 }
 var kra = "direction";
 
-function cK(a) {
-    return Xx == pf(a, kra)
-}
+function cK(a) {return Xx == pf(a, "direction")}
 function dK(a, b, c, d) {
     this.top = a;
     this.right = b;
     this.bottom = c;
     this.left = d
 }
-dK.prototype.sa = function () {
-    return new dK(this.top, this.right, this.bottom, this.left)
-};
+dK.prototype.sa = function () {return new dK(this.top, this.right, this.bottom, this.left)};
 dK.prototype.contains = function (a) {
     a = !this || !a ? l : a instanceof dK ? a.left >= this.left && a.right <= this.right && a.top >= this.top && a.bottom <= this.bottom : a.x >= this.left && a.x <= this.right && a.y >= this.top && a.y <= this.bottom;
     return a
@@ -55,27 +47,13 @@ function eK(a, b) {
     this.f = a;
     this.a = b
 }
-eK.prototype.O = function () {
-    return this.f
-};
-dJ.prototype.Wr = Ia(11, function () {
-    return cb(this.Rl) ? this.Rl : String(this.Rl)
-});
-Ex.prototype.SA = Ia(10, function () {
-    return this.f
-});
-Xp.prototype.ee = Ia(8, function () {
-    return this.a.toString()
-});
-aq.prototype.ee = Ia(7, function () {
-    return this.a.text
-});
-oq.prototype.ee = Ia(6, function () {
-    return rq(this).ee()
-});
-uq.prototype.ee = Ia(5, function () {
-    return v
-});
+eK.prototype.O = function () {return this.f};
+dJ.prototype.Wr = Ia(11, function () {return cb(this.Rl) ? this.Rl : String(this.Rl)});
+Ex.prototype.SA = Ia(10, function () {return this.f});
+Xp.prototype.ee = Ia(8, function () {return this.a.toString()});
+aq.prototype.ee = Ia(7, function () {return this.a.text});
+oq.prototype.ee = Ia(6, function () {return rq(this).ee()});
+uq.prototype.ee = Ia(5, function () {return v});
 zq.prototype.ee = Ia(4, function () {
     return nc(Sp(this), function (a) {
         return a.ee()
@@ -89,9 +67,7 @@ Cr.prototype.cancel = Ia(3, function () {
         this.dg >= 0 || this.vA(new bK(this))
     }
 });
-cp.prototype.Pc = Ia(2, function () {
-    return this.lc
-});
+cp.prototype.Pc = Ia(2, function () {return this.lc});
 xJ.prototype.getString = Ia(1, function (a) {
     a = this.get(a);
     return Za(a) ? String(a) : v
@@ -113,9 +89,7 @@ function lra(a, b) {
     var c = a.get(b);
     return cb(c) ? c == Fq || c == aj : !! c
 }
-function fK(a, b) {
-    return a.Hb && mJ(a) == 4 ? a.Hb.getResponseHeader(b) : undefined
-}
+function fK(a, b) {return a.Hb && mJ(a) == 4 ? a.Hb.getResponseHeader(b) : undefined}
 function mra(a, b) {
     var c = II(a) || upa[a.toLowerCase()];
     if (c) return c;
@@ -156,7 +130,7 @@ var qra = "wb";
 
 function rra(a, b) {
     var c = b.a;
-    if (c.O() == qra) a.f.push(b);
+    if (c.O() == "wb") a.f.push(b);
     else {
         c = c.Y();
         for (var d = 0, e; e = c[d]; d++) if (a.a[e]) a.a[e].push(b);
@@ -170,20 +144,13 @@ function gK(a, b) {
         ew(a.a, 1) || a.dispatchEvent(lj)
     }
 }
-function sra(a, b) {
-    a.J().z(sv).style.display = b ? v : Hf;a.dispatchEvent(yp)
-}
-
-function hK(a) {
-    return a.yt - a.Em - a.Fm
-}
+function sra(a, b) {a.J().z(sv).style.display = b ? v : Hf;a.dispatchEvent(yp)}
+function hK(a) {return a.yt - a.Em - a.Fm}
 function tra(a) {
     fp(a);
     return a.zd
 }
-function iK(a, b) {
-    return a.bd && b ? jc(a.bd, b) : -1
-}
+function iK(a, b) {return a.bd && b ? jc(a.bd, b) : -1}
 function ura(a) {
     var b = [];
     $o(a, function (c) {
@@ -204,31 +171,16 @@ function vra(a, b) {
 }
 var wra = "pixelLeft";
 
-function kK(a, b) {
-    return jra(a, a.currentStyle ? a.currentStyle[b] : k,
-    sf,
-    wra)
-}
-function xra(a) {
-    return new dK(a.top, a.left + a.width, a.top + a.height, a.left)
-}
-
+function kK(a, b) {return jra(a, a.currentStyle ? a.currentStyle[b] : k,sf,"pixelLeft")}
+function xra(a) {return new dK(a.top, a.left + a.width, a.top + a.height, a.left)}
 function lK(a) {
     if (!a.Hv) a.Hv = (a.xY ? a.i1 : df) == df ? new eK(0, 72) : new eK(1, Je * 10);
     return a.Hv
 }
-function mK(a, b) {
-    return b / a.a
-}
-function nK(a, b) {
-    return b * a.a
-}
-function oK(a, b) {
-    return b / Ye(a)
-}
-function pK(a) {
-    return a.length == 1 ? Xd + a : a
-}
+function mK(a, b) {return b / a.a}
+function nK(a, b) {return b * a.a}
+function oK(a, b) {return b / Ye(a)}
+function pK(a) {return a.length == 1 ? Xd + a : a}
 function yra(a, b, c, d) {
     a = a.Y();
     var e = 0,
@@ -241,13 +193,8 @@ function yra(a, b, c, d) {
     for (b = b; b > 0; b--) {
         g = E(a, b);
         switch (g) {
-        case ng:
-            e++;
-            break;
-        case kg:
-            e--;
-            if (e == 0) continue;
-            break
+        case ng:e++;break;
+        case kg:e--;if (e == 0) continue;break
         }
         if (e <= 0) {
             g = c.call(d, g, b);
@@ -279,15 +226,13 @@ function qK(a, b, c, d) {
         yra(a, b, c, d)
     }
 }
-function rK(a) {
-    return eval(TJ + a + Of)
-}
+function rK(a) {return eval(TJ + a + Of)}
 var Fra = "Style",
     Gra = "Width";
 
 function sK(a, b) {
-    if ((a.currentStyle ? a.currentStyle[b + Fra] : k) == Hf) return 0;
-    var c = a.currentStyle ? a.currentStyle[b + Gra] : k;
+    if ((a.currentStyle ? a.currentStyle[b + "Style"] : k) == Hf) return 0;
+    var c = a.currentStyle ? a.currentStyle[b + "Width"] : k;
     if (c in Ara) return Ara[c];
     return jra(a, c, sf, wra)
 }
@@ -304,14 +249,10 @@ var Hra = "amp",
 function Lra(a) {
     return a.replace(/&([^;]+);/g, function (b, c) {
         switch (c) {
-        case Hra:
-            return Sb;
-        case Ira:
-            return Tb;
-        case Jra:
-            return Ub;
-        case Kra:
-            return wb;
+        case "amp":return Sb;
+        case "lt":return Tb;
+        case "gt":return Ub;
+        case "quot":return wb;
         default:
             if (c.charAt(0) == Jt) {
                 var d = Number(Xd + c.substr(1));
@@ -321,9 +262,7 @@ function Lra(a) {
         }
     })
 }
-function uK(a) {
-    return /^[\s\xa0]*$/.test(a)
-}
+function uK(a) {return /^[\s\xa0]*$/.test(a)}
 function Mra(a) {
     for (var b = [], c = a.length, d = 0; d < c; d++) b.push(new aK(a[d]));
     return b
@@ -332,7 +271,7 @@ var Nra = "-lock",
     Ora = "Deserializing the lock failed ";
 
 function vK(a, b) {
-    var c = window.localStorage.getItem(a + Nra);
+    var c = window.localStorage.getItem(a + "-lock");
     if (c == k) return k;
     try {
         var d = Cra,
@@ -528,9 +467,7 @@ function wK(a, b) {
         se: c - 1
     }
 }
-function xK(a) {
-    return tu(a, qu(a))
-}
+function xK(a) {return tu(a, qu(a))}
 function Sra(a) {
     a = Lt(a);
     return Kt(a[1], a[2], a[3], a[4])
@@ -539,13 +476,8 @@ var Tra = [],
     Ura = [0, 13, 7, 3, 1, 0, -1],
     yK, Vra = [];
 
-function Wra(a, b, c) {
-    a.style[tK(c)] = b
-}
-function zK(a, b) {
-    return new bd(a.x - b.x, a.y - b.y)
-}
-
+function Wra(a, b, c) {a.style[tK(c)] = b}
+function zK(a, b) {return new bd(a.x - b.x, a.y - b.y)}
 function AK(a) {
     if (a.indexOf(Sb) != -1) {
         if (Yg in La && a.indexOf(Tb) == -1) {
@@ -561,11 +493,9 @@ function AK(a) {
     }
     return a
 }
-var Xra = "http://docs.google.com/support/bin/answer.py?answer=";
+//var Xra = "http://docs.google.com/support/bin/answer.py?answer=";
 
-function Yra(a) {
-    return Xra + a
-}
+//function Yra(a) {return Xra + a}
 function Zra(a, b) {
     Pd.call(this, rj);
     this.g = a;
@@ -611,9 +541,7 @@ function BK(a) {
     this.a = a
 }
 s(BK, t);
-BK.prototype.O = function () {
-    return this.a
-};
+BK.prototype.O = function () {return this.a};
 var fsa = "hex",
     gsa = "rgb",
     hsa = "named";
@@ -624,7 +552,7 @@ function CK(a) {
     var c = a.charAt(0) == Jt ? a : Jt + a;
     if (pw.test(c)) {
         b.us = ow(c);
-        b.type = fsa;
+        b.type = "hex";
         return b
     } else {
         a: {
@@ -782,27 +710,18 @@ var EK = "disable",
 
 function tsa(a, b) {
     switch (a) {
-    case 1:
-        return b ? EK : osa;
-    case 2:
-        return b ? FK : GK;
-    case 4:
-        return b ? psa : qsa;
-    case 8:
-        return b ? HK : rsa;
-    case 16:
-        return b ? IK : ssa;
-    case 32:
-        return b ? Ao : yo;
-    case 64:
-        return b ? aF : Kp;
+    case 1:return b ? EK : osa;
+    case 2:return b ? FK : GK;
+    case 4:return b ? psa : qsa;
+    case 8:return b ? HK : rsa;
+    case 16:return b ? IK : ssa;
+    case 32:return b ? Ao : yo;
+    case 64:return b ? aF : Kp;
     default:
     }
     f(Error("Invalid component state"))
 }
-function usa(a) {
-    return a
-}
+function usa(a) {return a}
 
 function vsa(a, b, c) {
     b = b || z.Va();
@@ -859,7 +778,7 @@ var ysa = "#000099";
 function LK() {
     var a = {};
     a.ts_un = i;
-    a.ts_fgc = ysa;
+    a.ts_fgc ="#000099"; 
     return a
 }
 function zsa(a) {
@@ -1015,10 +934,7 @@ function RK(a) {
     b.bottom = Math.min(b.bottom, e + c.height);
     return b.top >= 0 && b.left >= 0 && b.bottom > b.top && b.right > b.left ? b : k
 }
-function SK(a, b, c) {
-    cb(b) ? Wra(a, c, b) : qb(b, kb(Wra, a))
-}
-
+function SK(a, b, c) {cb(b) ? Wra(a, c, b) : qb(b, kb(Wra, a))}
 function Jsa(a, b) {
     if (b.x >= a.left && b.x <= a.right) {
         if (b.y >= a.top && b.y <= a.bottom) return 0;
@@ -1030,9 +946,7 @@ function Jsa(a, b) {
         d = b.x - c.x;c = b.y - c.y;
     return Math.sqrt(d * d + c * c)
 }
-function Ksa(a) {
-    a.stopPropagation()
-}
+function Ksa(a) {a.stopPropagation()}
 function Lsa(a, b, c) {
     b = rc(a, b, c);
     if (b >= 0) {
@@ -1041,10 +955,7 @@ function Lsa(a, b, c) {
     }
     return l
 }
-function TK(a) {
-    return a
-}
-
+function TK(a) {return a}
 function UK(a, b, c) {
     a = p(c) ? a.toFixed(c) : String(a);c = a.indexOf(Na);
     if (c == -1) c = a.length;
@@ -1054,7 +965,7 @@ var VK = "...";
 
 function Msa(a, b, c) {
     if (c) a = AK(a);
-    if (a.length > b) a = a.substring(0, b - 3) + VK;
+    if (a.length > b) a = a.substring(0, b - 3) + "...";
     if (c) a = Vb(a);
     return a
 }
@@ -1065,7 +976,7 @@ var Nsa = "$$$$";
 
 function XK(a) {
     for (var b = 1; b < arguments.length; b++) {
-        var c = String(arguments[b]).replace(/\$/g, Nsa);
+        var c = String(arguments[b]).replace(/\$/g, "$$$$");
         a = a.replace(/\%s/, c)
     }
     return a
@@ -1132,9 +1043,7 @@ $K.prototype.q = function () {
 };
 var Qsa = "addPE";
 
-function aL(a) {
-    O.call(this, Qsa, a)
-}
+function aL(a) {O.call(this, "addPE", a)}
 s(aL, O);
 aL.prototype.a = function (a) {
     var b = this.A,
@@ -1147,13 +1056,8 @@ aL.prototype.a = function (a) {
     this.pa(new $K(b, d, c, a, e));
     wr(b, new Uw(e), i)
 };
-yr(Qsa, function (a) {
-    return new aL(a)
-});
-
-function bL(a) {
-    O.call(this, tF, a)
-}
+yr(Qsa, function (a) {return new aL(a)});
+function bL(a) {O.call(this, tF, a)}
 s(bL, O);
 bL.prototype.a = function (a) {
     var b = a.styMap || {};
@@ -1164,13 +1068,8 @@ bL.prototype.a = function (a) {
     }
     this.na(new AG(Yg, 0, 0, b))
 };
-yr(tF, function (a) {
-    return new bL(a)
-});
-
-function cL(a) {
-    O.call(this, dF, a)
-}
+yr(tF, function (a) {return new bL(a)});
+function cL(a) {O.call(this, dF, a)}
 s(cL, O);
 cL.prototype.a = function (a) {
     var b = this.A;
@@ -1180,13 +1079,8 @@ cL.prototype.a = function (a) {
     c.ps_hdid = a == 0 ? v : Ww(oj);this.pa(new HJ(b, c));
     var d = Fu(b);c = JK(a);this.na(new AG(ih, d.start, d.end, c));Bb(b.u.a, c)
 };
-yr(dF, function (a) {
-    return new cL(a)
-});
-
-function dL(a) {
-    O.call(this, iF, a)
-}
+yr(dF, function (a) {return new cL(a)});
+function dL(a) {O.call(this, iF, a)}
 s(dL, O);
 dL.prototype.a = function (a) {
     a = a.aPaAlign;
@@ -1198,18 +1092,10 @@ dL.prototype.a = function (a) {
     for (e = 0; e < c.length; e++) {
         g = d[e];
         switch (a) {
-        case 0:
-            g = g ? 0 : 2;
-            break;
-        case 2:
-            g = g ? 2 : 0;
-            break;
-        case 1:
-            g = 1;
-            break;
-        case 3:
-            g = 3;
-            break;
+        case 0:g = g ? 0 : 2;break;
+        case 2:g = g ? 2 : 0;break;
+        case 1:g = 1;break;
+        case 3:g = 3;break;
         default:
             if (Fb) f(Error("AbsoluteAlignmentType " + a + " not supported by ApplyParagraphAlignCommand."));
             continue
@@ -1220,24 +1106,12 @@ dL.prototype.a = function (a) {
     }
     for (a = 0; a < b.length; a++)(c = b[a]) && this.na(c)
 };
-yr(iF, function (a) {
-    return new dL(a)
-});
-
-function eL(a) {
-    O.call(this, hF, a)
-}
+yr(iF, function (a) {return new dL(a)});
+function eL(a) {O.call(this, hF, a)}
 s(eL, O);
-eL.prototype.a = function (a) {
-    this.pa(new HJ(this.A, a.styMap, a.ignUnchVal))
-};
-yr(hF, function (a) {
-    return new eL(a)
-});
-
-function fL(a) {
-    O.call(this, pF, a)
-}
+eL.prototype.a = function (a) {this.pa(new HJ(this.A, a.styMap, a.ignUnchVal))};
+yr(hF, function (a) {return new eL(a)});
+function fL(a) {O.call(this, pF, a)}
 s(fL, O);
 fL.prototype.a = function (a) {
     a = a.ch;
@@ -1248,10 +1122,7 @@ fL.prototype.a = function (a) {
     this.pa(new LJ(b, new nb(d, c)));
     this.pa(new SJ(b, a, new P(d)))
 };
-yr(pF, function (a) {
-    return new fL(a)
-});
-
+yr(pF, function (a) {return new fL(a)});
 function gL(a, b) {
     GJ.call(this, a);
     this.f = b
@@ -1322,9 +1193,7 @@ iL.prototype.a = function () {
     }
 };
 
-function kL(a) {
-    O.call(this, XF, a)
-}
+function kL(a) {O.call(this, XF, a)}
 s(kL, O);
 kL.prototype.a = function (a) {
     var b = this.A;
@@ -1396,9 +1265,7 @@ function Rsa(a, b, c, d) {
         c = d ? e : (Math.floor(g / 36) + 1) * 36;d = hK(Yz(b));g = {};g.ps_ifl = Math.min(c, d);a.pa(new HJ(b, g))
     } else a.pa(new gL(b, !d))
 }
-yr(XF, function (a) {
-    return new kL(a)
-});
+yr(XF, function (a) {return new kL(a)});
 
 function mL(a, b) {
     GJ.call(this, a);
@@ -1487,9 +1354,7 @@ pL.prototype.q = function () {
     delete this.n
 };
 
-function rL(a) {
-    O.call(this, UF, a)
-}
+function rL(a) {O.call(this, UF, a)}
 s(rL, O);
 rL.prototype.a = function (a) {
     var b = this.A;
@@ -1513,14 +1378,10 @@ rL.prototype.a = function (a) {
     }
 };
 
-function Usa(a) {
-    return new rL(a)
-}
+function Usa(a) {return new rL(a)}
 yr(UF, Usa);
 
-function sL(a) {
-    O.call(this, sr, a)
-}
+function sL(a) {O.call(this, sr, a)}
 s(sL, O);
 sL.prototype.a = function (a) {
     var b = this.A,
@@ -1577,13 +1438,9 @@ sL.prototype.a = function (a) {
         }
     }
 };
-yr(sr, function (a) {
-    return new sL(a)
-});
+yr(sr, function (a) {return new sL(a)});
 
-function tL(a) {
-    O.call(this, YF, a)
-}
+function tL(a) {O.call(this, YF, a)}
 s(tL, O);
 tL.prototype.a = function (a) {
     a = a.aCR;
@@ -1671,7 +1528,6 @@ s(xL, O);
 xL.prototype.a = function (a) {
     this.pa(new JJ(this.A, a.eId))
 };
-
 function Vsa(a) {
     return new xL(a)
 }
@@ -1695,15 +1551,10 @@ yL.prototype.a = function (a) {
         wr(b, new P(c), i)
     }
 };
-
-function Wsa(a) {
-    return new yL(a)
-}
+function Wsa(a) {return new yL(a)}
 yr(JF, Wsa);
 
-function zL(a) {
-    O.call(this, KF, a)
-}
+function zL(a) {O.call(this, KF, a)}
 s(zL, O);
 zL.prototype.a = function (a) {
     var b = this.A;
@@ -1720,10 +1571,7 @@ zL.prototype.a = function (a) {
         wr(b, new P(c), i)
     } else if (Fb) f(Error("No footnoteId specified in deletefootnotecommand."))
 };
-
-function Xsa(a) {
-    return new zL(a)
-}
+function Xsa(a) {return new zL(a)}
 yr(KF, Xsa);
 
 function AL(a) {
@@ -1803,10 +1651,7 @@ DL.prototype.a = function () {
         wr(this.A, new P(b), i)
     }
 };
-
-function Zsa(a) {
-    return new DL(a)
-}
+function Zsa(a) {return new DL(a)}
 yr(sF, Zsa);
 
 function EL(a) {
@@ -2040,9 +1885,7 @@ HL.prototype.a = function (a) {
         }
     }
 };
-yr(Zu, function (a) {
-    return new HL(a)
-});
+yr(Zu, function (a) {return new HL(a)});
 
 function IL(a) {
     O.call(this, AE, a)
