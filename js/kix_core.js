@@ -60,8 +60,7 @@ function Qa(a) {
         return a.pY || (a.pY = new a)
     }
 }
-var Ra = "object",
-    aaa = "[object Array]",
+var aaa = "[object Array]",
     Sa = "number",
     baa = "splice",
     Ta = "array",
@@ -72,11 +71,11 @@ var Ra = "object",
 
 function Wa(a) {
     var b = typeof a;
-    if (b == Ra) if (a) {
+    if (b == "object") if (a) {
         if (a instanceof Array || !(a instanceof Object) && Object.prototype.toString.call(a) == aaa || typeof a.length == Sa && typeof a.splice != "undefined" && typeof a.propertyIsEnumerable != "undefined" && !a.propertyIsEnumerable(baa)) return Ta;
         if (!(a instanceof Object) && (Object.prototype.toString.call(a) == caa || typeof a.call != "undefined" && typeof a.propertyIsEnumerable != "undefined" && !a.propertyIsEnumerable(daa))) return Ua
     } else return Va;
-    else if (b == Ua && typeof a.call == "undefined") return Ra;
+    else if (b == Ua && typeof a.call == "undefined") return "object";
     return b
 }
 function p(a) {
@@ -87,7 +86,7 @@ function Za(a) {return a != k}
 function $a(a) {return Wa(a) == Ta}
 function ab(a) {
     var b = Wa(a);
-    return b == Ta || b == Ra && typeof a.length == Sa
+    return b == Ta || b == "object" && typeof a.length == Sa
 }
 var bb = "string";
 
@@ -99,7 +98,7 @@ function fb(a) {return typeof a == Sa}
 function gb(a) {return Wa(a) == Ua}
 function hb(a) {
     a = Wa(a);
-    return a == Ra || a == Ta || a == Ua
+    return a == "object" || a == Ta || a == Ua
 }
 
 function ib(a) {
@@ -689,7 +688,7 @@ var Zc = "o";
 
 function $c(a) {
     var b = typeof a;
-    return b == Ra && a || b == Ua ? Zc + ib(a) : b.substr(0, 1) + a
+    return b == "object" && a || b == Ua ? Zc + ib(a) : b.substr(0, 1) + a
 }
 n = Xc.prototype;
     n.$g = function () {return this.a.$g()};
@@ -7000,7 +6999,7 @@ function er(a, b, c) {
     case "undefined":
         c.push(Va);
         break;
-    case Ra:
+    case "object":
         if (b == k) {
             c.push(Va);
             break
