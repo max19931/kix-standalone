@@ -1,5 +1,4 @@
-var true = true,
-    k = null,
+var k = null,
     l = false,
     aa = "vertical",
     ba = "J",
@@ -31,24 +30,27 @@ var true = true,
     Da = "unicode",
     Ea = "fi",
     Fa = "Error",
-    n, Ga = [];
+    n,
+    Ga = [];
 
 function Ha(a) {
     return function () {
         return Ga[a].apply(this, arguments)
     }
 }
+//goog.define
 function Ia(a, b) {
     return Ga[a] = b
 }
+
 var Ja = Ja || {},
     La = this,
     Ma = k,
     Na = ".";
 
 function Oa(a, b) {
-    for (var c = a.split(Na), d = b || La, e; e = c.shift();) if (d[e]) d = d[e];
-    else return k;
+    for (var c = a.split("."), d = b || this, e; e = c.shift();) if (d[e]) d = d[e];
+    else return null;
     return d
 }
 function Pa() {}
@@ -66,46 +68,27 @@ var aaa = "[object Array]",
     Ua = "function",
     Va = "null";
 
-function Wa(a) {
-    var b = typeof a;
-    if (b == "object") if (a) {
-        if (a instanceof Array || !(a instanceof Object) && Object.prototype.toString.call(a) == aaa || typeof a.length == Sa && typeof a.splice != "undefined" && typeof a.propertyIsEnumerable != "undefined" && !a.propertyIsEnumerable(baa)) return Ta;
-        if (!(a instanceof Object) && (Object.prototype.toString.call(a) == caa || typeof a.call != "undefined" && typeof a.propertyIsEnumerable != "undefined" && !a.propertyIsEnumerable(daa))) return Ua
-    } else return Va;
-    else if (b == Ua && typeof a.call == "undefined") return "object";
-    return b
-}
+var Wa=goog.typeof;
+
 function p(a) {
     return a !== undefined
 }
 function Xa(a) {return a === k}
 function Za(a) {return a != k}
-function $a(a) {return Wa(a) == Ta}
-function ab(a) {
-    var b = Wa(a);
-    return b == Ta || b == "object" && typeof a.length == Sa
-}
-var bb = "string";
-
-function cb(a) {return typeof a == bb}
-var db = "boolean";
-
-function eb(a) {return typeof a == db}
-function fb(a) {return typeof a == Sa}
-function gb(a) {return Wa(a) == Ua}
-function hb(a) {
-    a = Wa(a);
-    return a == "object" || a == Ta || a == Ua
-}
-
+function $a(a) {return Wa(a) == "array"}
+function ab(a) {var b = Wa(a);return b == Ta || b == "object" && typeof a.length == Sa}
+function cb(a) {return typeof a == "string"}
+function eb(a) {return typeof a == "boolean"}
+function fb(a) {return typeof a == "number"}
+function gb(a) {return Wa(a) == "function"}
+function hb(a) {a = Wa(a);return a=="object"||a=="array"||a=="function"}
 function ib(a) {
     if (a.hasOwnProperty && a.hasOwnProperty(jb)) return a[jb];
-    a[jb] || (a[jb] = ++eaa);
+    a[jb] || (a[jb] = ++0);
     return a[jb]
 }
 var jb = "closure_uid_" + Math.floor(Math.random() * 2147483648).toString(36),
     eaa = 0;
-
 function r(a, b) {
     var c = b || La;
     if (arguments.length > 2) {
@@ -119,7 +102,6 @@ function r(a, b) {
         return a.apply(c, arguments)
     }
 }
-
 function kb(a) {
     var b = Array.prototype.slice.call(arguments, 1);
     return function () {
@@ -128,15 +110,10 @@ function kb(a) {
         return a.apply(this, c)
     }
 }
-var lb = Date.now || function () {return +new Date};
 
-function s(a, b) {
-    function c() {}
-    c.prototype = b.prototype;
-    a.p = b.prototype;
-    a.prototype = new c;
-    a.prototype.constructor = a
-}
+var lb = goog.now,
+    s = goog.inherits;
+
 Function.prototype.ij = function (a) {
     if (arguments.length > 1) {
         var b = Array.prototype.slice.call(arguments, 1);
@@ -154,19 +131,13 @@ t.prototype.G = function () {
     }
 };
 t.prototype.q = function () {};
-function mb(a) {a && typeof a.G == Ua && a.G()};
-function nb(a, b) {
-    a = Number(a);
-    b = Number(b);
-    this.start = a < b ? a : b;this.end = a < b ? b : a
-}
-nb.prototype.sa = function () {return new nb(this.start, this.end)};
 
-function ob(a, b) {
-    var c = Math.max(a.start, b.start),
-        d = Math.min(a.end, b.end);
-    return c <= d ? new nb(c, d) : k
-}
+function mb(a) {a && typeof a.G == Ua && a.G()};
+
+nb = goog.math.Range;
+mb = goog.math.Range.prototype.clone;
+ob = goog.math.Range.intersection;
+
 function pb(a, b) {return a.start <= b && a.end >= b};
 function qb(a, b, c) {for (var d in a) b.call(c, a[d], d, a)}
 function faa(a, b, c) {for (var d in a) if (b.call(c, a[d], d, a)) return true;return l}
@@ -182,36 +153,18 @@ function tb(a) {
     for (var d in a) b[c++] = d;
     return b
 }
-function ub(a) {
-    for (var b in a) return l;
-    return true
-}
-function vb(a, b) {
-    var c;
-    if (c = b in a) delete a[b];
-    return c
-}
+ub = goog.object.isEmpty;
+vb = goog.object.remove;
+
 var wb = '"';
 
-function xb(a, b, c) {a[b] = c}
-function yb(a) {
-    var b = {};
-    for (var c in a) b[c] = a[c];
-    return b
-}
+xb = goog.object.set;
+yb = goog.object.clone;
+
 var zb = "toString",
     Ab = ["constructor", "hasOwnProperty", "isPrototypeOf", "propertyIsEnumerable", "toLocaleString", zb, "valueOf"];
 
-function Bb(a) {
-    for (var b, c, d = 1; d < arguments.length; d++) {
-        c = arguments[d];
-        for (b in c) a[b] = c[b];
-        for (var e = 0; e < Ab.length; e++) {
-            b = Ab[e];
-            if (Object.prototype.hasOwnProperty.call(c, b)) a[b] = c[b]
-        }
-    }
-}
+Bd = goog.object.extend;
 var Cb = "Uneven number of arguments";
 
 function Db() {
@@ -229,18 +182,13 @@ function Eb() {
 var Fb = {},
     v = "";
 
-function Hb(a, b) {return a.lastIndexOf(b, 0) == 0}
-function Ib(a, b) {
-    var c = a.length - b.length;
-    return c >= 0 && a.indexOf(b, c) == c
-}
+Hb = goog.string.internal.startsWith;
+Ib = goog.string.internal.endsWith;
+
 function Jb(a) {return a.replace(/^[\s\xa0]+|[\s\xa0]+$/g, v)}
 function Kb(a) {return a.replace(/^[\s\xa0]+/, v)}
-function Lb(a, b) {
-    var c = String(a).toLowerCase(),
-        d = String(b).toLowerCase();
-    return c < d ? -1 : c == d ? 0 : 1
-}
+Lb = goog.string.internal.caseInsensitiveCompare;
+
 var gaa = /^[a-zA-Z0-9\-_.!~*'()]*$/;
 
 function Mb(a) {
@@ -281,7 +229,9 @@ var Wb = /&/g,
 function $b(a) {return String(a).replace(/([-()\[\]{}+?*.$\^|,:#<!\\])/g, iaa).replace(/\x08/g, jaa)}
 function ac(a, b) {return Array(b + 1).join(a)}
 function bc() {return Array.prototype.join.call(arguments, v)}
-function cc() {return Math.floor(Math.random() * 2147483648).toString(36) + (Math.floor(Math.random() * 2147483648) ^ lb()).toString(36)}
+
+cc = goog.string.getRandomString;
+
 var dc = "(\\d*)(\\D*)",
     ec = "g";
 
@@ -308,74 +258,24 @@ function gc(a, b) {
 };
 
 function hc(a) {return a[a.length - 1]}
+
 var ic = Array.prototype,
-    jc = ic.indexOf ?
-    function (a, b, c) {
-        return ic.indexOf.call(a, b, c)
-    } : function (a, b, c) {
-        c = c == k ? 0 : c < 0 ? Math.max(0, a.length + c) : c;
-        if (cb(a)) {
-            if (!cb(b) || b.length != 1) return -1;
-            return a.indexOf(b, c)
-        }
-        for (c = c; c < a.length; c++) if (c in a && a[c] === b) return c;
-        return -1
-    },
-    kc = ic.forEach ?
-    function (a, b, c) {
-        ic.forEach.call(a, b, c)
-    } : function (a, b, c) {
-        for (var d = a.length, e = cb(a) ? a.split(v) : a,
-            g = 0;g < d;g++) g in e && b.call(c, e[g], g, a)
-    };
+    jc = goog.array.indexOf,
+    kc = goog.array.forEach;
 
 function lc(a, b, c) {
     var d = a.length,
         e = cb(a) ? a.split(v) : a;
     for (d = d - 1; d >= 0; --d) d in e && b.call(c, e[d], d, a)
 }
-var mc = ic.filter ?
-function (a, b, c) {
-    return ic.filter.call(a, b, c)
-} : function (a, b, c) {
-    for (var d = a.length, e = [], g = 0, h = cb(a) ? a.split(v) : a,
-        j = 0;j < d;j++) if (j in h) {
-        var m = h[j];
-        if (b.call(c, m, j, a)) e[g++] = m
-    }
-    return e
-},
-    nc = ic.map ?
-    function (a, b, c) {
-        return ic.map.call(a, b, c)
-    } : function (a, b, c) {
-        for (var d = a.length, e = Array(d), g = cb(a) ? a.split(v) : a,
-            h = 0;h < d;h++) if (h in g) e[h] = b.call(c, g[h], h, a);
-        return e
-    },
-    oc = ic.some ?
-    function (a, b, c) {
-        return ic.some.call(a, b, c)
-    } : function (a, b, c) {
-        for (var d = a.length, e = cb(a) ? a.split(v) : a,
-            g = 0;g < d;g++) if (g in e && b.call(c, e[g], g, a)) return true;
-        return l
-    },
-    pc = ic.every ?
-    function (a, b, c) {
-        return ic.every.call(a, b, c)
-    } : function (a, b, c) {
-        for (var d = a.length, e = cb(a) ? a.split(v) : a,
-            g = 0;g < d;g++) if (g in e && !b.call(c, e[g], g, a)) return l;
-        return true
-    };
-
-function qc(a, b, c) {b = rc(a, b, c);return b < 0 ? k : cb(a) ? a.charAt(b) : a[b]}
-function rc(a, b, c) {
-    for (var d = a.length, e = cb(a) ? a.split(v) : a,
-        g = 0;g < d;g++) if (g in e && b.call(c, e[g], g, a)) return g;
-    return -1
-}
+var mc = goog.array.filter,
+    nc = goog.array.map,
+    oc = goog.array.some,
+    pc = goog.array.every,
+    qc = goog.array.find,
+    rc = goog.array.findIndex,
+    sc = goog.array.contains
+	
 function sc(a, b) {return jc(a, b) >= 0}
 function tc(a) {if (!$a(a)) for (var b = a.length - 1; b >= 0; b--) delete a[b];a.length = 0}
 function uc(a, b) {sc(a, b) || a.push(b)}
@@ -407,6 +307,7 @@ function Bc(a) {
     }
 }
 function wc(a) {return ic.splice.apply(a, Cc(arguments, 1))}
+
 function Cc(a, b, c) {return arguments.length <= 2 ? ic.slice.call(a, b) : ic.slice.call(a, b, c)}
 function Dc(a, b) {
     for (var c = b || a, d = {}, e = 0, g = 0; g < a.length;) {
@@ -434,6 +335,7 @@ function Ec(a, b, c) {
     return g ? d : ~d
 }
 function Gc(a, b) {ic.sort.call(a, b || Fc)}
+	
 function Hc(a, b) {
     for (var c = 0; c < a.length; c++) a[c] = {
         index: c,
@@ -476,25 +378,8 @@ function Mc() {
 };
 var Nc = "StopIteration" in La ? La.StopIteration : Error("StopIteration");
 
-function Oc() {}
-Oc.prototype.next = function () {f(Nc)};
-Oc.prototype.Uh = function () {return this};
-
-function maa(a) {
-    if (a instanceof Oc) return a;
-    if (typeof a.Uh == Ua) return a.Uh(l);
-    if (ab(a)) {
-        var b = 0,
-            c = new Oc;
-        c.next = function () {
-            for (;;) {
-                if (b in a) return a[b++];
-                else b++
-            }
-        };
-        return c
-    }
-};
+Oc = goog.iter.Iterator;	
+maa= goog.iter.toIterator;
 
 function Pc(a) {
     if (typeof a.$g == Ua) return a.$g();
@@ -561,24 +446,24 @@ function Tc(a) {
     } else a && Uc(this, a)
 }
 n = Tc.prototype;
-    n.Db = 0;
-    n.iu = 0;
-    n.$g = function () {return this.Db};
-    n.Qb = function () {
+n.Db = 0;
+n.iu = 0;
+n.$g = function () {return this.Db};
+n.Qb = function () {
     Vc(this);
     for (var a = [], b = 0; b < this.xb.length; b++) a.push(this.ze[this.xb[b]]);
     return a
 };
-    n.Ue = function () {Vc(this);return this.xb.concat()};
-    n.Ad = function (a) {return Wc(this.ze, a)};
-    n.Tz = function (a) {
+n.Ue = function () {Vc(this);return this.xb.concat()};
+n.Ad = function (a) {return Wc(this.ze, a)};
+n.Tz = function (a) {
     for (var b = 0; b < this.xb.length; b++) {
         var c = this.xb[b];
         if (Wc(this.ze, c) && this.ze[c] == a) return true
     }
     return l
 };
-    n.Qa = function (a, b) {
+n.Qa = function (a, b) {
     if (this === a) return true;
     if (this.Db != a.$g()) return l;
     var c = b || paa;
@@ -588,8 +473,8 @@ n = Tc.prototype;
 };
 
 function paa(a, b) {return a === b}
-    n.Df = function () {return this.Db == 0};
-    n.clear = function () {this.ze = {};this.iu = this.Db = this.xb.length = 0};
+n.Df = function () {return this.Db == 0};
+n.clear = function () {this.ze = {};this.iu = this.Db = this.xb.length = 0};
 n.remove = function (a) {
     if (Wc(this.ze, a)) {
         delete this.ze[a];
