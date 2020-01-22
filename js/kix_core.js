@@ -306,6 +306,7 @@ function Bc(a) {
         else a.push(c)
     }
 }
+	wc =  goog.arry.splice;
 function wc(a) {return ic.splice.apply(a, Cc(arguments, 1))}
 
 function Cc(a, b, c) {return arguments.length <= 2 ? ic.slice.call(a, b) : ic.slice.call(a, b, c)}
