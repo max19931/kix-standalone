@@ -340,6 +340,7 @@ function Ec(a, b, c) {
     }
     return g ? d : ~d
 }
+Gc = goog.array.sort
 function Gc(a, b) {ic.sort.call(a, b || Fc)}
 	
 function Hc(a, b) {
@@ -444,8 +445,7 @@ function oaa(a, b, c) {
     return true
 };
 Tc = goog.structs.Map;
-
-function paa(a, b) {return a === b}
+paa = goog.structs.Map.defaultEquals;
 
 function Vc(a) {
     if (a.Db != a.xb.length) {
@@ -483,6 +483,7 @@ function Uc(a, b) {
 }
 
 function Wc(a, b) {return Object.prototype.hasOwnProperty.call(a, b)};
+
 Xc = goog.structs.set;
 var Zc = "o";
 
@@ -634,6 +635,7 @@ n.Te = z.Te;
 	n.yI = z.yI;
 	n.hI = z.hI;
 	n.cw = z.cw;
+
 goog.require("goog.dom.iframe");
 var Kd = "iframe";
 var cba = "<!DOCTYPE html>",
@@ -652,19 +654,8 @@ function Nd(a, b) {
 var Od;
 
 goog.require('goog.events.Event');
-function Pd(a, b) {
-    this.type = a;
-    this.currentTarget = this.target = b
-}
-s(Pd, t);
-	n = Pd.prototype;
-	n.q = function () {delete this.type;delete this.target;delete this.currentTarget};
-	n.ok = l;
-	n.Jp = true;
-	n.stopPropagation = function () {this.ok = true};
-	n.preventDefault = function () {this.Jp = l};
-
-function gba(a) {a.preventDefault()};
+Pd = goog.events.Event;
+gba = goog.events.Event.preventDefault;
 
 goog.require('goog.events.BrowserEvent');
 var Rd = "mouseover",
