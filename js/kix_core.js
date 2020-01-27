@@ -782,97 +782,10 @@ var ke = {},
     me = {},
     ne = {};
 
-function oe(a, b, c, d, e) {
-    if (b) if ($a(b)) {
-        for (var g = 0; g < b.length; g++) oe(a, b[g], c, d, e);
-        return k
-    } else {
-        d = !! d;
-        var h = le;
-        b in h || (h[b] = $d());
-        h = h[b];
-        if (!(d in h)) {
-            h[d] = $d();
-            h.Db++
-        }
-        h = h[d];
-        var j = ib(a),
-            m;
-        h.wg++;
-        if (h[j]) {
-            m = h[j];
-            for (g = 0; g < m.length; g++) {
-                h = m[g];
-                if (h.Ch == c && h.Dw == e) {
-                    if (h.Fp) break;
-                    return m[g].key
-                }
-            }
-        } else {
-            m = h[j] = be();
-            h.Db++
-        }
-        g = de();
-        g.src = a;
-        h = ge();
-        h.init(c, g, a, b, d, e);
-        c = h.key;
-        g.key = c;
-        m.push(h);
-        ke[c] = h;
-        me[j] || (me[j] = be());
-        me[j].push(h);
-        if (a.addEventListener) {
-            if (a == La || !a.bH) a.addEventListener(b, g, d)
-        } else a.attachEvent(pe(b), g);
-        return c
-    } else f(Error("Invalid event type"))
-}
-function qe(a, b, c, d, e) {
-    if ($a(b)) {
-        for (var g = 0; g < b.length; g++) qe(a, b[g], c, d, e);
-        return k
-    }
-    a = oe(a, b, c, d, e);
-    ke[a].Hz = true;
-    return a
-}
-function re(a, b, c, d, e) {
-    if ($a(b)) {
-        for (var g = 0; g < b.length; g++) re(a, b[g], c, d, e);
-        return k
-    }
-    d = !! d;
-    a = se(a, b, d);
-    if (!a) return l;
-    for (g = 0; g < a.length; g++) if (a[g].Ch == c && a[g].capture == d && a[g].Dw == e) return te(a[g].key);
-    return l
-}
-
-function te(a) {
-    if (!ke[a]) return l;
-    var b = ke[a];
-    if (b.Fp) return l;
-    var c = b.src,
-        d = b.type,
-        e = b.f,
-        g = b.capture;
-    if (c.removeEventListener) {
-        if (c == La || !c.bH) c.removeEventListener(d, e, g)
-    } else c.detachEvent && c.detachEvent(pe(d), e);
-    c = ib(c);
-    e = le[d][g][c];
-    if (me[c]) {
-        var h = me[c];
-        xc(h, b);
-        h.length == 0 && delete me[c]
-    }
-    b.Fp = true;
-    e.kL = true;
-    ue(d, g, c, e);
-    delete ke[a];
-    return true
-}
+oe=goog.events.listen_;
+qe=goog.events.listenOnce;
+re=goog.events.unlisten;
+te=goog.events.unlistenByKey;
 
 function ue(a, b, c, d) {
     if (!d.vx) if (d.kL) {
@@ -1191,7 +1104,7 @@ function Se(a, b, c) {
     d[b] || (d[b] = {});
     if (!d[b][c]) {
         e = a.pD ? 50 : 1;
-	a = Te(a, bc(Pe, b, Qe, ac(c, e), Re), true);
+	a = Te(a, bc('<span style="', b, '">', ac(c, e), "</span>"), true);
 	a.width /= e;
 	d[b][c] = a
     }
@@ -1400,7 +1313,7 @@ ef.prototype.q = function () {
 
 function lf() {}
 s(lf, t);
-	lf.prototype.update = function (a) {
+lf.prototype.update = function (a) {
     for (var b in a) {
         var c = a[b];
         p(c) && this.Gb(b, c)
@@ -1420,6 +1333,7 @@ pf=goog.style.getStyle_;
 var qf = "position";
 
 rf = goog.style.getComputedPosition;
+
 var sf = "left",
     tf = "top";
 
@@ -1535,13 +1449,9 @@ var Nf = {},
     Cba = "alpha(opacity=",
     Of = ")";
 
-function Pf(a, b) {
-    var c = a.style;
-    if (zba in c) c.opacity = b;
-    else if (Aba in c) c.MozOpacity = b;
-    else if (Bba in c) c.filter = b === v ? v : Cba + b * 100 + Of
-}
-function Qf(a, b) {a.style.display = b ? v : Hf}
+Pf=goog.style.getOpacity;
+Qf=goog.style.showElement;
+
 var Rf = y.Ua ? "MozUserSelect" : y.La ? "WebkitUserSelect" : k,
     Dba = "-$1",
     Sf = ":",
@@ -1576,7 +1486,7 @@ s(Vf, lf);
 };
 	n.ea = function () {};
 	n.oh = function () {return l};
-	n.mf = function (a) {
+n.mf = function (a) {
     for (var b in a) {
         var c = this.ea(b);
         if (this.oh(b)) {
@@ -1585,7 +1495,7 @@ s(Vf, lf);
     }
     return true
 };
-	n.Qa = function (a) {
+n.Qa = function (a) {
     if (!a) return l;
     if (this == a) return true;
     return this.mf(a.Z())
@@ -1594,11 +1504,11 @@ s(Vf, lf);
 function Wf() {this.a = []}
 s(Wf, Vf);
 	n = Wf.prototype;
-	n.Qb = function () {
+n.Qb = function () {
     return this.a
 };
 var Xf = "cv";
-	n.Uc = function (a) {
+n.Uc = function (a) {
     for (var b in a) switch (b) {
     case Xf:
         return Eba(this, a[b])
@@ -2278,7 +2188,7 @@ n.Z = function () {
     a.ts_va = this.wm;
     return a
 };
-	n.ea = function (a) {
+n.ea = function (a) {
     switch (a) {
     case Vh:return this.Wo;
     case Wh:return this.gl;
@@ -2292,7 +2202,7 @@ n.Z = function () {
     }
     return Uh.p.ea.call(this, a)
 };
-	n.be = function () {return rb(Oba)};
+n.be = function () {return rb(Oba)};
 n.Qa = function (a) {
     if (!a) return l;
     if (this == a) return true;
@@ -2378,15 +2288,16 @@ function yi() {
     this.a = {}
 }
 s(yi, t);
-var zi = "document-creation";yi.prototype.ij = function (a) {
+var zi = "document-creation";
+yi.prototype.ij = function (a) {
     if (this.Wa && Ai(this.Wa)) a.la(true, zi);
     else {
         this.a[a.ma()] = a;
         a.la(l, zi)
     }
 };
-	yi.prototype.f = function () {for (var a in this.a) this.a[a].la(true, zi)};
-	yi.prototype.q = function () {
+yi.prototype.f = function () {for (var a in this.a) this.a[a].la(true, zi)};
+yi.prototype.q = function () {
     yi.p.q.call(this);
     this.L.G();
     delete this.L;
@@ -2548,60 +2459,8 @@ function Uba(a, b) {
     })
 };
 
-function Pi() {}
-s(Pi, t);
-	n = Pi.prototype;
-	n.bH = true;
-	n.vp = k;
-	n.kE = function (a) {this.vp = a};
-	n.addEventListener = function (a, b, c, d) {oe(this, a, b, c, d)};
-	n.removeEventListener = function (a, b, c, d) {re(this, a, b, c, d)};
-n.dispatchEvent = function (a) {
-    a = a;
-    if (cb(a)) a = new Pd(a, this);
-    else if (a instanceof Pd) a.target = a.target || this;
-    else {
-        var b = a;
-        a = new Pd(a.type, this);
-        Bb(a, b)
-    }
-    b = 1;
-    var c, d = a.type,
-        e = le;
-    if (d in e) {
-        e = e[d];
-        d = true in e;
-        var g;
-        if (d) {
-            c = [];
-            for (g = this; g; g = g.vp) c.push(g);
-            g = e[true];
-            g.wg = g.Db;
-            for (var h = c.length - 1; !a.ok && h >= 0 && g.wg; h--) {
-                a.currentTarget = c[h];
-                b &= we(g, c[h], a.type, true, a) && a.Jp != l
-            }
-        }
-        if (l in e) {
-            g = e[l];
-            g.wg = g.Db;
-            if (d) for (h = 0; !a.ok && h < c.length && g.wg; h++) {
-                a.currentTarget = c[h];
-                b &= we(g, c[h], a.type, l, a) && a.Jp != l
-            } else for (c = this; !a.ok && c && g.wg; c = c.vp) {
-                a.currentTarget = c;
-                b &= we(g, c, a.type, l, a) && a.Jp != l
-            }
-        }
-        a = Boolean(b)
-    } else a = true;
-    return a
-};
-	n.q = function () {
-    Pi.p.q.call(this);
-    nba(this);
-    this.vp = k
-};
+Pi=goog.events.EventTarget;
+
 var Qi = "525";
 
 function Vba(a, b, c, d, e) {
@@ -2769,57 +2628,10 @@ var Si = "backspace",
         224: "win"
     };
 
-function Kj(a, b) {
-    this.f = a || 1;
-    this.g = b || Lj;
-    this.n = r(this.D2, this);
-    this.u = lb()
-}
-s(Kj, Pi);Kj.prototype.a = l;
-var Lj = La.window;
-	n = Kj.prototype;
-	n.Ta = k;
-	n.setInterval = function (a) {
-    this.f = a;
-    if (this.Ta && this.a) {
-        Mj(this);
-        this.start()
-    } else this.Ta && Mj(this)
-};
+Kj=goog.Timer;
 var Nj = "tick";
-	n.D2 = function () {
-    if (this.a) {
-        var a = lb() - this.u;
-        if (a > 0 && a < this.f * 0.8) this.Ta = this.g.setTimeout(this.n, this.f - a);
-        else {
-            this.dispatchEvent(Nj);
-            if (this.a) {
-                this.Ta = this.g.setTimeout(this.n, this.f);
-                this.u = lb()
-            }
-        }
-    }
-};
-n.start = function () {
-    this.a = true;
-    if (!this.Ta) {
-        this.Ta = this.g.setTimeout(this.n, this.f);
-        this.u = lb()
-    }
-};
 
-function Mj(a) {
-    a.a = l;
-    if (a.Ta) {
-        a.g.clearTimeout(a.Ta);
-        a.Ta = k
-    }
-}
-n.q = function () {
-    Kj.p.q.call(this);
-    Mj(this);
-    delete this.g
-};
+Mj=goog.Timer.prototype.stop;
 
 function Oj(a, b, c) {
     if (gb(a)) {
@@ -2828,7 +2640,8 @@ function Oj(a, b, c) {
     else f(Error(Zd));
     return b > 2147483647 ? -1 : Lj.setTimeout(a, b || 0)
 }
-function Pj(a) {Lj.clearTimeout(a)};
+Pj=goog.Timer.clear;
+
 var Qj = "keydown",
     Rj = "1.8",
     Sj = "keyup";
@@ -2852,14 +2665,11 @@ function Tj(a) {
     }
 }
 var Uj;
-	s(Tj, Pi);
+s(Tj, Pi);
 var Wba = [27, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 19],
-    Vj = "shortcut",
-    Wj = {
-        TO: Vj,
-        SO: "shortcut_"
-    };
-	n = Tj.prototype;
+Wj=goog.ui.KeyboardShortcutHandler.EventType;
+
+n = Tj.prototype;
 var Xj = "+",
     Yj = "meta";
 n.Zx = function (a) {
@@ -3988,101 +3798,18 @@ s(Bo, Pi);
     delete this.ua
 };
 var Co = "mousedown";
-
-function Do(a, b, c) {
-    this.target = a;
-    this.u = b || a;
-    this.Bh = c || new mf(NaN, NaN, NaN, NaN);
-    this.n = z.wb(a);
-    this.L = new ze(this);
-    oe(this.u, Co, this.xM, l, this)
-}
-s(Do, Pi);
+Do=goog.fx.Dragger;
 var Eo = y.ia || y.Ua && y.Xb("1.9.3");
-	n = Do.prototype;
-	n.gs = n.hs = n.yM = n.zM = n.ur = n.vr = n.HB = n.H_ = 0;
-	n.bB = true;
-	n.xj = l;n.gY = l;
-	n.la = function (a) {this.bB = a};
-	n.q = function () {
-    Do.p.q.call(this);
-    re(this.u, Co, this.xM, l, this);
-    this.L.G();
-    delete this.target;
-    delete this.u;
-    delete this.L
-};
 var Fo = "mousemove",
     Go = "mouseup",
     Uga = "losecapture",
     Vga = "dragstart";
-n.xM = function (a) {
-    if (this.bB && !this.xj && (a.type != Co || Vd(a, 0))) {
-        if (this.HB == 0) {
-            Ho(this, a);
-            if (this.xj) a.preventDefault();
-            else return
-        } else a.preventDefault();
-        var b = this.n,
-            c = b.documentElement,
-            d = !Eo;
-        this.L.C(b, Fo, this.I_, d);
-        this.L.C(b, Go, this.Pv, d);
-        if (Eo) {
-            c.setCapture(l);
-            this.L.C(c, Uga, this.Pv)
-        } else this.L.C(z.fc(b), yo, this.Pv);
-        y.ia && this.gY && this.L.C(b, Vga, gba);
-        this.M && this.L.C(this.M, af, this.v0, d);
-        this.gs = this.yM = a.qw;
-        this.hs = this.zM = a.sw;
-        this.ur = this.target.offsetLeft;
-        this.vr = this.target.offsetTop;
-        this.g =
-        z.J(this.n).hg();
-        this.H_ = lb()
-    }
-};
 var Io = "start";
 
 function Ho(a, b) {
     if (a.dispatchEvent(new Jo(Io, a, b.clientX, b.clientY, b)) !== l) a.xj = true
 }
-n.Pv = function (a, b) {
-    De(this.L);
-    Eo && this.n.releaseCapture();
-    if (this.xj) {
-        this.xj = l;
-        this.dispatchEvent(new Jo(Zi, this, a.clientX, a.clientY, a, Ko(this, this.ur), Lo(this, this.vr), b))
-    }
-};
 var Mo = "beforedrag";
-n.I_ = function (a) {
-    if (this.bB) {
-        var b = a.qw - this.gs,
-            c = a.sw - this.hs;
-        this.gs = a.qw;
-        this.hs = a.sw;
-        if (!this.xj) {
-            var d = this.yM - this.gs,
-                e = this.zM - this.hs;
-            if (d * d + e * e > this.HB) {
-                Ho(this, a);
-                if (!this.xj) {
-                    this.Pv(a);
-                    return
-                }
-            }
-        }
-        c = No(this, b, c);
-        b = c.x;
-        c = c.y;
-        if (this.xj) if (this.dispatchEvent(new Jo(Mo, this, a.clientX, a.clientY, a, b, c)) !== l) {
-            this.kA(a, b, c, l);
-            a.preventDefault()
-        }
-    }
-};
 
 function No(a, b, c) {
     var d = z.J(a.n).hg();
@@ -4093,61 +3820,17 @@ function No(a, b, c) {
     a.vr += c;
     return new bd(Ko(a, a.ur), Lo(a, a.vr))
 }
-n.v0 = function (a) {
-    var b = No(this, 0, 0);
-    a.clientX = this.g.x - this.gs;
-    a.clientY = this.g.x - this.hs;
-    this.kA(a, b.x, b.y, true)
-};
 var Oo = "drag";
-	n.kA = function (a, b, c) {
-    this.target.style.left = b + D;
-    this.target.style.top = c + D;
-    this.dispatchEvent(new Jo(Oo, this, a.clientX, a.clientY, a, b, c))
-};
-
-function Ko(a, b) {
-    var c = a.Bh,
-        d = !isNaN(c.left) ? c.left : k;c = !isNaN(c.width) ? c.width : 0;
-    return Math.min(d != k ? d + c : Infinity,
-    Math.max(d != k ? d : -Infinity,
-    b))
-}
-
-function Lo(a, b) {
-    var c = a.Bh,
-        d = !isNaN(c.top) ? c.top : k;c = !isNaN(c.height) ? c.height : 0;
-    return Math.min(d != k ? d + c : Infinity,
-    Math.max(d != k ? d : -Infinity,
-    b))
-}
-function Jo(a, b, c, d, e, g, h, j) {
-    Pd.call(this, a);
-    this.clientX = c;
-    this.clientY = d;
-    this.g = e;
-    this.left = p(g) ? g : b.ur;this.top = p(h) ? h : b.vr;this.a = b;this.u = !! j
-}
-s(Jo, Pd);
+Ko=goog.fx.Dragger.prototype.limitX;
+Lo=goog.fx.Dragger.prototype.limitY;
+Jo=goog.fx.DragEvent;
 
 function Po() {}
 Qa(Po);
 	Po.prototype.a = 0;
 	Po.N();
-
-function Qo(a) {
-    this.Xe = a || z.J();
-    this.dy = Ro
-}
-s(Qo, Pi);
-	Qo.prototype.lb = Po.N();
+Qo=goog.ui.Component;
 var Ro = k;
-	n = Qo.prototype;
-	n.zo = n.Xe = n.ua = n.dy = n.gD = n.ib = n.bd = n.Uf = k;
-	n.OE = n.cb = l;
-	n.ma = function () {return this.zo || (this.zo = Sf + (this.lb.a++).toString(36))};
-	n.z = function () {return this.ua};
-	n.sb = function (a) {this.ua = a};
 
 function So(a) {return a.K || (a.K = new ze(a))}
 var To = "Unable to set parent component";
@@ -4157,18 +3840,8 @@ function Uo(a, b) {
     Qo.p.kE.call(a, b)
 }
 var Wo = "Method not supported";
-	n.kE = function (a) {Qo.p.kE.call(this, a)};
-	n.J = function () {return this.Xe};
-	n.F = function () {this.ua = this.Xe.createElement(A)};
-	n.Ja = function (a) {Xo(this, a)};
-	n.QD = function (a) {Xo(this, a.parentNode, a)};
 var Yo = "Component already rendered";
-
-function Xo(a, b, c) {    
-    a.ua || a.F();
-    b ? b.insertBefore(a.ua, c || k) : a.Xe.Va().body.appendChild(a.ua);
-    if (!a.ib || a.ib.cb) a.ga()
-}
+Xo=goog.ui.Component.prototype.render_;
 function Zo(a, b) {
     if (b && a.We(b)) {
         a.OE = true;
@@ -4177,56 +3850,6 @@ function Zo(a, b) {
         a.ga()
     }
 }
-n.We = function () {return true};
-	n.ob = function (a) {this.ua = a};
-	n.ga = function () {
-		this.cb = true;
-		$o(this, function (a) {!a.cb && a.z() && a.ga()})
-	};
-n.pb = function () {
-    $o(this, function (a) {
-        a.cb && a.pb()
-    });
-    this.K && De(this.K);
-    this.cb = l
-};
-	n.q = function () {
-    Qo.p.q.call(this);
-    this.cb && this.pb();
-    if (this.K) {
-        this.K.G();
-        delete this.K
-    }
-    $o(this, function (a) {
-        a.G()
-    });
-    !this.OE && this.ua && z.removeNode(this.ua);
-    this.ib = this.gD = this.ua = this.Uf = this.bd = k
-};
-	n.Il = function () {return this.gD};
-	n.Nt = function (a) {this.gD = a};
-	n.ya = function (a, b) {this.fj(a, ap(this), b)};
-n.fj = function (a, b, c) {    
-    if (!this.Uf || !this.bd) {
-        this.Uf = {};
-        this.bd = []
-    }
-    if (a.ib == this) {
-        this.Uf[a.ma()] = a;
-        xc(this.bd, a)
-    } else xb(this.Uf, a.ma(), a);
-    Uo(a, this);
-    wc(this.bd, b, 0, a);
-    if (a.cb && this.cb && a.ib == this) {
-        c = this.db();
-        c.insertBefore(a.z(), c.childNodes[b] || k)
-    } else if (c) {
-        this.ua || this.F();
-        b = bp(this, b + 1);
-        Xo(a, this.db(), b ? b.ua : k)
-    } else this.cb && !a.cb && a.ua && a.ga()
-};
-	n.db = function () {return this.ua};
 
 function ap(a) {return a.bd ? a.bd.length : 0}
 function Vo(a, b) {
@@ -4239,51 +3862,13 @@ function Vo(a, b) {
 }
 function bp(a, b) {return a.bd ? a.bd[b] || k : k}
 function $o(a, b, c) {a.bd && kc(a.bd, b, c)}
-n.removeChild = function (a, b) {
-    if (a) {
-        var c = cb(a) ? a : a.ma();a = Vo(this, c);
-        if (c && a) {
-            vb(this.Uf, c);
-            xc(this.bd, a);
-            if (b) {
-                a.pb();
-                a.ua && z.removeNode(a.ua)
-            }
-            Uo(a, k)
-        }
-    }
-    if (!a) f(Error("Child is not in parent component"));
-    return a
-};
-	n.Jh = function (a) {for (; this.bd && this.bd.length != 0;) this.removeChild(bp(this, 0), a)};
 var Wga = "modal-dialog";
-
-function cp(a, b, c) {
-    Qo.call(this, c);
-    this.Nc = a || Wga;
-    this.KE = !! b;
-    this.Bc = dp
-}
-s(cp, Qo);
-	n = cp.prototype;	
-	n.UH = n.ts = n.ht = n.JH = true;
-	n.KE = n.kb = n.Vn = l;
-	n.vz = 0.5;
-	n.xw = n.lc = v;
-	n.Xv = n.Bc = n.Ao = n.sc = n.Ac = n.Qf = n.ih = n.FE = n.Bf = n.Af = n.zd = k;
-	n.setTitle = function (a) {this.xw = a;this.ih && z.Ud(this.ih, a)};
-
+cp=goog.ui.Dialog;
 function ep(a, b) {
     a.lc = b;
     if (a.Af) a.Af.innerHTML = b
 }
-n.Pc = Ha(2);
-
 function fp(a) {a.z() || a.Ja()}
-n.db = function () {
-    fp(this);
-    return this.Af
-};
 
 function gp(a) {fp(a);return a.z()}
 function hp(a) {fp(a);return a.sc}
@@ -4304,30 +3889,8 @@ var lp = "-title",
     pp = "-buttons",
     qp = "dialog",
     rp = "labelledby";
-n.F = function () {
-    jp(this);
-    var a = this.J();
-    this.sb(a.F(A, {
-        className: this.Nc,
-        tabIndex: 0
-    }, this.Qf = a.F(A, {
-        className: this.Nc + lp,
-        id: this.ma()
-    }, this.ih = a.F(Ee, this.Nc + mp, this.xw), this.Bf = a.F(Ee, this.Nc + np)), this.Af = a.F(A, this.Nc + op), this.zd = a.F(A, this.Nc + pp), this.Ya = a.F(Ee, {
-        tabIndex: 0
-    })));
-    this.FE = this.Qf.id;
-    z.qb.Mh(this.z(), qp);
-    z.qb.Ka(this.z(), rp, this.FE || v);
-    if (this.lc) this.Af.innerHTML = this.lc;
-    Qf(this.Bf, this.ts);
-    Qf(this.z(), l);
-    if (this.Bc) {
-        a = this.Bc;
-        a.ua = this.zd;
-        a.Ja()
-    }
-};
+
+
 var sp = "-bg";
 
 function jp(a) {
@@ -4349,165 +3912,17 @@ function jp(a) {
         a.sc = k
     }
 }
-n.Ja = function (a) {    
-    this.z() || this.F();
-    a = a || this.J().Va().body;
-    tp(this, a);
-    cp.p.Ja.call(this, a)
-};
 
 function tp(a, b) {
     a.Ac && b.appendChild(a.Ac);
     a.sc && b.appendChild(a.sc)
 }
-n.We = function (a) {return a && a.tagName && a.tagName == sd && cp.p.We.call(this, a)};
 var up = "button",
     vp = "cancel",
     wp = "-default";
-n.ob = function (a) {
-    cp.p.ob.call(this, a);
-    z.ba.add(this.z(), this.Nc);
-    a = this.Nc + op;
-    if (this.Af = z.oc(k, a, this.z())[0]) this.lc = this.Af.innerHTML;
-    else {
-        this.Af = this.J().F(A, a);
-        if (this.lc) this.Af.innerHTML = this.lc;
-        this.z().appendChild(this.Af)
-    }
-    a = this.Nc + lp;
-    var b = this.Nc + mp,
-        c = this.Nc + np;
-    if (this.Qf = z.oc(k, a, this.z())[0]) {
-        this.ih = z.oc(k, b, this.Qf)[0];
-        this.Bf = z.oc(k, c, this.Qf)[0]
-    } else {
-        this.Qf = this.J().F(A, a);
-        this.z().insertBefore(this.Qf, this.Af)
-    }
-    if (this.ih) this.xw = z.$c(this.ih);
-    else {
-        this.ih = this.J().F(Ee, b, this.xw);
-        this.Qf.appendChild(this.ih)
-    }
-    z.qb.Ka(this.z(), rp, this.FE || v);
-    if (!this.Bf) {
-        this.Bf = this.J().F(Ee, c);
-        this.Qf.appendChild(this.Bf)
-    }
-    Qf(this.Bf, this.ts);
-    a = this.Nc + pp;
-    if (this.zd = z.oc(k, a, this.z())[0]) {
-        a = this.Bc = new xp(this.J());
-        b = this.zd;
-        if (!(!b || b.nodeType != 1)) {
-            a.ua = b;
-            b = a.ua.getElementsByTagName(up);
-            c = 0;
-            for (var d, e, g; d = b[c]; c++) {
-                e = d.name || d.id;
-                g = z.$c(d) || d.value;
-                if (e) {
-                    var h = c == 0;
-                    a.set(e, g, h, d.name == vp);
-                    h && z.ba.add(d, a.Nc + wp)
-                }
-            }
-        }
-    } else {
-        this.zd = this.J().F(A, a);
-        this.z().appendChild(this.zd);
-        if (this.Bc) {
-            a = this.Bc;
-            a.ua = this.zd;
-            a.Ja()
-        }
-    }
-    jp(this);
-    tp(this, z.wb(this.z()).body);
-    Qf(this.z(), l)
-};
-var Xga = "-title-draggable";n.ga = function () {
-    cp.p.ga.call(this);
-    this.Xv = new Bo(this.J().Va());
-    if (this.JH && !this.Ao) {
-        var a = new Do(this.z(), this.Qf);
-        z.ba.add(this.Qf, this.Nc + Xga);
-        this.Ao = a
-    }
-    So(this).C(this.Bf, Ud, this.A0).C(this.Xv, zo, this.r0);
-    z.qb.Mh(this.z(), qp);
-    this.ih.id !== v && z.qb.Ka(this.z(), rp, this.ih.id)
-};
-	n.pb = function () {
-    this.Da() && this.X(l);
-    this.Xv.G();
-    this.Xv = k;
-    if (this.Ao) {
-        this.Ao.G();
-        this.Ao = k
-    }
-    cp.p.pb.call(this)
-};
+var Xga = "-title-draggable";
 var yp = "resize",
     zp = "afterhide";
-n.X = function (a) {
-    if (a != this.kb) {
-        var b = this.J().Va(),
-            c = z.fc(b) || window;
-        this.cb || this.Ja(b.body);
-        if (a) {
-            kp(this);
-            b = this.J().Va();
-            var d = z.fc(b) || window;
-            if (rf(this.z()) == yf) var e = b = 0;
-            else {
-                e = this.J().hg();
-                b = e.x;
-                e = e.y
-            }
-            var g = Mf(this.z());
-            d = z.fe(d);
-            b = Math.max(b + d.width / 2 - g.width / 2, 0);
-            e = Math.max(e + d.height / 2 - g.height / 2, 0);
-            uf(this.z(), b, e);
-            So(this).C(this.z(), Qj, this.Nx, true).C(this.z(), Td, this.Nx, true).C(c, yp, this.MI, true)
-        } else So(this).a(this.z(), Qj, this.Nx, true).a(this.z(), Td, this.Nx, true).a(c, yp, this.MI, true);
-        this.Ac && Qf(this.Ac, a);
-        this.sc && Qf(this.sc, a);
-        Qf(this.z(), a);
-        a && this.focus();
-        if (this.kb = a) So(this).C(this.zd, Ud, this.pL);
-        else {
-            So(this).a(this.zd, Ud, this.pL);
-            this.dispatchEvent(zp);
-            this.Vn && this.G()
-        }
-    }
-};
-	n.Da = function () {return this.kb};
-var Ap = "input",
-    Yga = "position:fixed;width:0;height:0;left:0;top:0;";
-n.focus = function () {
-    try {
-        this.z().focus()
-    } catch (a) {}
-    if (this.Bc) {
-        var b = this.Bc.pj;
-        if (b) for (var c = this.J().Va(), d = this.zd.getElementsByTagName(up), e = 0, g; g = d[e]; e++) if (g.name == b) {
-            try {
-                if (y.La || y.Gc) {
-                    var h = c.createElement(Ap);
-                    h.style.cssText = Yga;
-                    this.z().appendChild(h);
-                    h.focus();
-                    this.z().removeChild(h)
-                }
-                g.focus()
-            } catch (j) {}
-            break
-        }
-    }
-};
 
 function kp(a) {
     a.Ac && Qf(a.Ac, l);
@@ -4530,28 +3945,6 @@ function kp(a) {
         a.Ao.Bh = new mf(0, 0, c - d.width, b - d.height)
     }
 }
-n.A0 = function () {
-    if (this.ts) {
-        var a = this.Bc,
-            b = a && a.il;
-        if (b) {
-            a = a.get(b);
-            this.dispatchEvent(new Bp(b, a)) && this.X(l)
-        } else this.X(l)
-    }
-};
-n.q = function () {
-    cp.p.q.call(this);
-    if (this.sc) {
-        z.removeNode(this.sc);
-        this.sc = k
-    }
-    if (this.Ac) {
-        z.removeNode(this.Ac);
-        this.Ac = k
-    }
-    this.Ya = this.zd = this.Bf = k
-};
 
 function Cp(a, b) {
     a.Bc = b;
@@ -4561,107 +3954,20 @@ function Cp(a, b) {
         c.Ja()
     } else a.zd.innerHTML = v
 }
-n.pL = function (a) {
-    a: {
-        for (a = a.target; a != k && a != this.zd;) {
-            if (a.tagName == dk) {
-                a = a;
-                break a
-            }
-            a = a.parentNode
-        }
-        a = k
-    }
-    if (a && !a.disabled) {
-        a = a.name;
-        var b = this.Bc.get(a);
-        this.dispatchEvent(new Bp(a, b)) && this.X(l)
-    }
-};
-n.Nx = function (a) {
-    var b = l,
-        c = l,
-        d = this.Bc,
-        e = a.target;
-    if (a.type == Qj) if (this.UH && a.keyCode == 27) {
-        var g = d && d.il;
-        e = e.tagName == ek && !e.disabled;
-        if (g && !e) {
-            c = true;
-            b = d.get(g);
-            b = this.dispatchEvent(new Bp(g, b))
-        } else e || (b = true)
-    } else {
-        if (a.keyCode == 9 && a.Cd && e == this.z()) c = true
-    } else if (a.keyCode == 13) {
-        if (e.tagName == dk) g = e.name;
-        else if (d) {
-            var h = d.pj,
-                j = h && Dp(d, h);
-            e = (e.tagName == ck || e.tagName == ek) && !e.disabled;
-            if (j && !j.disabled && !e) g = h
-        }
-        if (g) {
-            c = true;
-            b = this.dispatchEvent(new Bp(g, String(d.get(g))))
-        }
-    }
-    if (b || c) {
-        a.stopPropagation();
-        a.preventDefault()
-    }
-    b && this.X(l)
-};
-	n.MI = function () {kp(this)};
-	n.r0 = function (a) {this.Ya == a.target && Oj(this.QT, 0, this)};
-	n.QT = function () {y.ia && this.J().Va().body.focus();this.z().focus()};
 var Ep = "dialogselect";
-
-function Bp(a, b) {
-    this.type = Ep;
-    this.key = a;
-    this.caption = b
-}
-s(Bp, Pd);
-
-function xp(a) {
-    this.a = a || z.J();
-    Tc.call(this)
-}
+Bp=goog.ui.Dialog.Event;
+xp=goog.ui.Dialog.ButtonSet;
 var dp, Fp;
-	s(xp, Tc);
-	n = xp.prototype;
-	n.Nc = "goog-buttonset";
-	n.pj = n.ua = n.il = k;
-	n.set = function (a, b, c, d) {
-    Tc.prototype.set.call(this, a, b);
-    if (c) this.pj = a;
-    if (d) this.il = a;
-    return this
-};
-n.Ja = function () {
-    if (this.ua) {
-        this.ua.innerHTML = v;
-        var a = z.J(this.ua);
-        Sc(this, function (b, c) {
-            var d = a.F(up, {
-                name: c
-            }, b);
-            if (c == this.pj) d.className = this.Nc + wp;
-            this.ua.appendChild(d)
-        }, this)
-    }
-};
-
+	
 function Dp(a, b) {
     for (var c = a.ua.getElementsByTagName(dk), d = 0, e; e = c[d]; d++) if (e.name == b || e.id == b) return e;
     return k
 }
 var Gp = "ok",
     Hp = "OK";
-	Fp = (new xp).set(Gp, Hp, true, true);
+Fp = (new xp).set(Gp, Hp, true, true);
 var Ip = "Cancel";
-	dp = (new xp).set(Gp, Hp, true).set(vp, Ip, l, true);
+dp = (new xp).set(Gp, Hp, true).set(vp, Ip, l, true);
 var Jp = "no";
 (new xp).set("yes", "Yes", true).set(Jp, "No", l, true);
 (new xp).set("yes", "Yes").set(Jp, "No", true).set(vp, Ip, l, true);
@@ -4696,56 +4002,11 @@ function Mp(a, b, c, d) {
 
 function Np() {}
 s(Np, t);
-
-function Op(a, b, c, d, e) {
-    this.a = !! b;
-    a && Pp(this, a, d);
-    this.f = e != undefined ? e : this.Fe || 0;
-    if (this.a) this.f *= -1;this.g = !c
-}
-s(Op, Oc);
-	n = Op.prototype;
-	n.Qd = n.Fe = k;
-	n.wE = l;
-
+Op=goog.dom.TagIterator;
 function Pp(a, b, c, d) {
     if (a.Qd = b) a.Fe = fb(c) ? c : a.Qd.nodeType != 1 ? 0 : a.a ? -1 : 1;
     if (fb(d)) a.f = d
 }
-n.$h = function (a) {
-    this.Qd = a.Qd;
-    this.Fe = a.Fe;
-    this.f = a.f;
-    this.a = a.a;
-    this.g = a.g
-};
-	n.sa = function () {return new Op(this.Qd, this.a, !this.g, this.Fe, this.f)};
-n.next = function () {
-    var a;
-    if (this.wE) {
-        if (!this.Qd || this.g && this.f == 0) f(Nc);
-        a = this.Qd;
-        var b = this.a ? -1 : 1;
-        if (this.Fe == b) {
-            var c = this.a ? a.lastChild : a.firstChild;c ? Pp(this, c) : Pp(this, a, b * -1)
-        } else(c = this.a ? a.previousSibling : a.nextSibling) ? Pp(this, c) : Pp(this, a.parentNode, b * -1);this.f += this.Fe * (this.a ? -1 : 1)
-    } else this.wE = true;
-    a = this.Qd;
-    if (!this.Qd) f(Nc);
-    return a
-};
-	n.Qa = function (a) {return a.Qd == this.Qd && (!this.Qd || a.Fe == this.Fe)};
-n.splice = function () {
-    var a = this.Qd,
-        b = this.a ? 1 : -1;
-    if (this.Fe == b) {
-        this.Fe = b * -1;
-        this.f += this.Fe * (this.a ? -1 : 1)
-    }
-    this.a = !this.a;Op.prototype.next.call(this);this.a = !this.a;b = ab(arguments[0]) ? arguments[0] : arguments;
-    for (var c = b.length - 1; c >= 0; c--) z.RB(b[c], a);z.removeNode(a)
-};
-
 function Qp() {}
 function Rp(a) {
     if (a.getSelection) return a.getSelection();
