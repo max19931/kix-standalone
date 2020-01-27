@@ -38,16 +38,12 @@ function Ha(a) {
         return Ga[a].apply(this, arguments)
     }
 }
-//goog.define
-function Ia(a, b) {
-    return Ga[a] = b
-}
-
-var Ja = Ja || {},
-    La = this,
+Ia = goog.define;
+Ja = goog;
+var La = this,
     Ma = k,
     Na = ".";
-
+Oa = goog.exportPath_;
 function Oa(a, b) {
     for (var c = a.split("."), d = b || this, e; e = c.shift();) if (d[e]) d = d[e];
     else return null;
@@ -87,8 +83,8 @@ function ib(a) {
     a[jb] || (a[jb] = ++0);
     return a[jb]
 }
-var jb = "closure_uid_" + Math.floor(Math.random() * 2147483648).toString(36),
-    eaa = 0;
+jb = goog.UID_PROPERTY_;
+var eaa = 0;
 function r(a, b) {
     var c = b || La;
     if (arguments.length > 2) {
@@ -668,7 +664,7 @@ function Vd(a, b) {return y.ia ? a.type == Ud ? b == 0 : !! (a.Zc.button & hba[b
 var Wd = "8",
     iba = y.ia && !y.Xb(Wd);
 
-	Qd.prototype.q = function () {Qd.p.q.call(this);this.Ve = this.currentTarget = this.target = this.Zc = k};
+Qd.prototype.q = function () {Qd.p.q.call(this);this.Ve = this.currentTarget = this.target = this.Zc = k};
 	
 var jba = "ScriptEngine",
     kba = "JScript",
@@ -1054,8 +1050,8 @@ ee(ye);
 function ze(a) {this.f = a}
 s(ze, t);
 	
-		ar Ae = new Ld(0, 100);
-	ze.prototype.C = function (a, b, c, d, e) {
+var Ae = new Ld(0, 100);
+ze.prototype.C = function (a, b, c, d, e) {
     if ($a(b)) for (var g = 0; g < b.length; g++) this.C(a, b[g], c, d, e);
     else Be(this, oe(a, b, c || this, d || l, e || this.f || this));
     return this
@@ -1124,11 +1120,19 @@ function Ge() {
     this.L = new ze(this)
 }
 s(Ge, t);
-	Qa(Ge);
+Qa(Ge);
+
 var He = "1.9",
     pba = y.Ua && y.Xb(He),
     Ie = 72 / 2.54,
-    Je = 72 / 25.4;n = Ge.prototype;n.Bt = k;n.jy = k;n.gm = k;n.Ho = k;n.pD = l;n.nx = 0;
+    Je = 72 / 25.4;
+n = Ge.prototype;
+n.Bt = k;
+n.jy = k;
+n.gm = k;
+n.Ho = k;
+n.pD = l;
+n.nx = 0;
 
 function Le(a, b, c, d) {
     if (b != a.nx) {
@@ -1166,6 +1170,7 @@ function Me(a, b, c, d) {
 var sba = '<!DOCTYPE html><html><body><span style="position:absolute; white-space:nowrap;',
     tba = " overflow:auto;",
     uba = '"></span></body></html>';
+
 n.ZI = function (a) {
     var b = z.Te(this.gm);
     b.open();
@@ -1185,7 +1190,10 @@ function Se(a, b, c) {
     d = d[e];
     d[b] || (d[b] = {});
     if (!d[b][c]) {
-        e = a.pD ? 50 : 1;a = Te(a, bc(Pe, b, Qe, ac(c, e), Re), true);a.width /= e;d[b][c] = a
+        e = a.pD ? 50 : 1;
+	a = Te(a, bc(Pe, b, Qe, ac(c, e), Re), true);
+	a.width /= e;
+	d[b][c] = a
     }
     return d[b][c]
 }
@@ -1207,6 +1215,7 @@ function Ve(a, b, c) {
     } else a = b.offsetWidth;
     return new cd(a, (c ? b.firstChild || b : b).offsetHeight)
 }
+
 function Te(a, b, c) {a.f.innerHTML = b;return Ve(a, a.f, c)}
 function We(a, b) {
     var c = !(y.ia ? !! b.parentElement : !! b.parentNode);
@@ -1219,6 +1228,7 @@ function We(a, b) {
     return d
 }
 function Xe(a, b, c) {a = b * Ye(a);return c ? a : Math.round(a)}
+
 var Ze = "1in";
 
 function Ye(a) {
@@ -1355,23 +1365,32 @@ function ef(a) {
     var b = a.l,
         c;
     if (b) c = (c = b.match(/[-_]([a-zA-Z]{2}|\d{3})([-_]|$)/)) ? c[0].replace(/[_-]/g, v) : v;
-    else c = v;c = c;this.i1 = b == cf || c == df ? df : c;this.Bq = a.up;this.Dq = a.upd;this.KF = a.ud;this.KD = a.un;this.RF = a.wf || k
+    else c = v;
+	c = c;
+	this.i1 = b == cf || c == df ? df : c;
+	this.Bq = a.up;
+	this.Dq = a.upd;
+	this.KF = a.ud;
+	this.KD = a.un;
+	this.RF = a.wf || k
 }
 s(ef, t);
-	ef.prototype.Hv = k;
+ef.prototype.Hv = k;
 
 function ff(a) {return a.g}
+
 ef.prototype.z = function () {return this.ua};
 function gf(a) {return a.SM}
 function hf(a) {return a.Oa}
 function vba(a) {return a.IP}
 function jf(a) {return a.g != 4}
+
 ef.prototype.sa = function (a) {
     var b = yb(this.X_);
     if (a) for (var c in a) b[c] = a[c];
     return new ef(b)
 };
-	ef.prototype.q = function () {
+ef.prototype.q = function () {
     ef.p.q.call(this);
     delete this.CM;
     delete this.OM;
@@ -1388,29 +1407,19 @@ s(lf, t);
     }
 };
 
-function mf(a, b, c, d) {
-    this.left = a;
-    this.top = b;
-    this.width = c;
-    this.height = d
-}
-mf.prototype.sa = function () {return new mf(this.left, this.top, this.width, this.height)};
-
+mf= goog.math.Rect;
+	
 function nf(a, b) {
     if (a == b) return true;
     if (!a || !b) return l;
     return a.left == b.left && a.width == b.width && a.top == b.top && a.height == b.height
 }
-mf.prototype.contains = function (a) {return a instanceof mf ? this.left <= a.left && this.left + this.width >= a.left + a.width && this.top <= a.top && this.top + this.height >= a.top + a.height : a.x >= this.left && a.x <= this.left + this.width && a.y >= this.top && a.y <= this.top + this.height};
-function of(a, b) {
-    var c = z.wb(a);
-    if (c.defaultView && c.defaultView.getComputedStyle) if (c = c.defaultView.getComputedStyle(a, v)) return c[b];
-    return k
-}
-function pf(a, b) {return of(a, b) || (a.currentStyle ? a.currentStyle[b] : k) || a.style[b]}
+of=goog.style.getComputedStyle;
+pf=goog.style.getStyle_;
+
 var qf = "position";
 
-function rf(a) {return pf(a, qf)}
+rf = goog.style.getComputedPosition;
 var sf = "left",
     tf = "top";
 
@@ -1432,31 +1441,13 @@ function wf(a) {
     if (y.ia && !z.J(a).Ro()) return a.body;
     return a.documentElement
 }
-function xf(a) {
-    var b = a.getBoundingClientRect();
-    if (y.ia) {
-        a = a.ownerDocument;
-        b.left -= a.documentElement.clientLeft + a.body.clientLeft;
-        b.top -= a.documentElement.clientTop + a.body.clientTop
-    }
-    return b
-}
+xf=goog.style.getBoundingClientRect_;
+
 var yf = "fixed",
     zf = "absolute",
     Af = "static";
+Bf=goog.style.getOffsetParent;
 
-function Bf(a) {
-    if (y.ia) return a.offsetParent;
-    var b = z.wb(a),
-        c = pf(a, qf),
-        d = c == yf || c == zf;
-    for (a = a.parentNode; a && a != b; a = a.parentNode) {
-        c = pf(a, qf);
-        d = d && c == Af && a != b.documentElement && a != b.body;
-        if (!d && (a.scrollWidth > a.clientWidth || a.scrollHeight > a.clientHeight || c == yf || c == zf)) return a
-    }
-    return k
-}
 var Cf = "TR";
 
 function Df(a) {
@@ -1519,17 +1510,8 @@ function Ef(a) {
     return b
 }
 
-function Ff(a, b, c) {
-    if (b instanceof cd) {
-        c = b.height;
-        b = b.width
-    } else {
-        if (c == undefined) f(Error("missing height argument"));
-        c = c
-    }
-    wba(a, b);
-    xba(a, c)
-}
+Ff=goog.style.setSize;
+
 var D = "px";
 
 function vf(a, b, c, d) {
@@ -1544,23 +1526,8 @@ var xba = kb(vf, md, true),
     Kf = "hidden",
     Lf = "inline";
 
-function Mf(a) {
-    var b = y.Gc && !y.Xb(Gf);
-    if (pf(a, yba) != Hf) return b ? new cd(a.offsetWidth || a.clientWidth, a.offsetHeight || a.clientHeight) : new cd(a.offsetWidth, a.offsetHeight);
-    var c = a.style,
-        d = c.display,
-        e = c.visibility,
-        g = c.position;c.visibility = Kf;c.position = zf;c.display = Lf;
-    if (b) {
-        b = a.offsetWidth || a.clientWidth;
-        a = a.offsetHeight || a.clientHeight
-    } else {
-        b = a.offsetWidth;
-        a = a.offsetHeight
-    }
-    c.display = d;c.position = g;c.visibility = e;
-    return new cd(b, a)
-}
+Mf=goog.style.getSizeWithDisplay_;
+
 var Nf = {},
     zba = "opacity",
     Aba = "MozOpacity",
