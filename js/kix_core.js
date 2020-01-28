@@ -580,57 +580,7 @@ var Id = "tabindex";
 var aba = "tabIndex";
 var bba = "innerText";
 
-function gd(a) {this.a = a || La.document || document}
-n = gd.prototype;
-	n.J = z.J;
-	n.Va = function () {return this.a};
-n.z = function (a) {return cb(a) ? this.a.getElementById(a) : a};
-	n.$M = gd.prototype.z;
-	n.oc = function (a, b, c) {return z.NA(this.a, a, b, c)};
-	n.MA = function (a, b) {return z.MA(a, b || this.a)};
-	n.nI = function (a, b) {return z.nI(a, b || this.a)};
-	n.aN = gd.prototype.oc;
-	n.oy = z.oy;
-	n.fe = function (a) {return z.fe(a || this.fc())};
-	n.yS = function () {return z.lI(this.fc())};
-	n.F = function () {return z.vv(this.a, arguments)};
-	n.cN = gd.prototype.F;
-	n.createElement = function (a) {return this.a.createElement(a)};
-	n.createTextNode = function (a) {return this.a.createTextNode(a)};
-	n.Zz = function (a, b, c) {return z.aH(this.a, a, b, !! c)};
-	n.he = function (a) {return z.GJ(this.a, a)};
-	n.jS = function () {return this.Ro() ? td : ud};
-	n.Ro = function () {return z.So(this.a)};
-	n.fc = function () {return z.ZA(this.a)};
-	n.KA = function () {return z.LA(this.a)};
-	n.hg = function () {return z.mI(this.a)};
-	n.appendChild = z.appendChild;
-	n.append = z.append;
-	n.Jh = z.Jh;
-	n.No = z.No;
-	n.RB = z.RB;
-	n.removeNode = z.removeNode;
-	n.Dt = z.Dt;
-	n.aI = z.aI;
-	n.pd = z.pd;
-	n.QA = z.QA;
-	n.jw = z.jw;
-	n.BI = z.BI;
-	n.wI = z.wI;
-	n.CI = z.CI;
-	n.Qw = z.Qw;
-	n.contains = z.contains;
-	n.wb = z.wb;
-n.Te = z.Te;
-	n.ew = z.ew;
-	n.Ud = z.Ud;
-	n.ZH = z.ZH;
-	n.$H = z.$H;
-	n.$c = z.$c;
-	n.xI = z.xI;
-	n.yI = z.yI;
-	n.hI = z.hI;
-	n.cw = z.cw;
+gd=goog.dom;
 
 goog.require("goog.dom.iframe");
 var Kd = "iframe";
@@ -1116,7 +1066,10 @@ function Ue(a, b, c) {
     d[e] || (d[e] = {});
     d = d[e];
     if (!d[b]) {
-        e = a.pD ? 50 : 1;a = Te(a, ac(b, e), c);a.width /= e;d[b] = a
+        e = a.pD ? 50 : 1;
+	a = Te(a,ac(b,e),c);
+	a.width /= e;
+	d[b] = a
     }
     return d[b]
 }
@@ -1169,17 +1122,6 @@ function bf(a) {
     a.a.style.overflowY = v;
     return a.jy
 }
-n.q = function () {
-    Ge.p.q.call(this);
-    this.L.G();
-    delete this.L;
-    delete this.g;
-    delete this.n;
-    delete this.a;
-    delete this.f;
-    delete this.gm;
-    delete this.Ho
-};
 var cf = "en",
     df = "US";
 
@@ -1287,29 +1229,13 @@ function ef(a) {
 	this.KD = a.un;
 	this.RF = a.wf || k
 }
-s(ef, t);
-ef.prototype.Hv = k;
 
 function ff(a) {return a.g}
-
-ef.prototype.z = function () {return this.ua};
 function gf(a) {return a.SM}
 function hf(a) {return a.Oa}
 function vba(a) {return a.IP}
 function jf(a) {return a.g != 4}
 
-ef.prototype.sa = function (a) {
-    var b = yb(this.X_);
-    if (a) for (var c in a) b[c] = a[c];
-    return new ef(b)
-};
-ef.prototype.q = function () {
-    ef.p.q.call(this);
-    delete this.CM;
-    delete this.OM;
-    delete this.ua;
-    delete this.Hv
-};
 
 function lf() {}
 s(lf, t);
@@ -1320,13 +1246,8 @@ lf.prototype.update = function (a) {
     }
 };
 
-mf= goog.math.Rect;
-	
-function nf(a, b) {
-    if (a == b) return true;
-    if (!a || !b) return l;
-    return a.left == b.left && a.width == b.width && a.top == b.top && a.height == b.height
-}
+mf=goog.math.Rect;
+nf=goog.math.Rect.equals;
 of=goog.style.getComputedStyle;
 pf=goog.style.getStyle_;
 
@@ -1503,7 +1424,7 @@ n.Qa = function (a) {
 
 function Wf() {this.a = []}
 s(Wf, Vf);
-	n = Wf.prototype;
+n = Wf.prototype;
 n.Qb = function () {
     return this.a
 };
@@ -1524,9 +1445,7 @@ function Eba(a, b) {
     var c = b.opIndex,
         d = b.opValue;
     switch (b.op) {
-    case Yf:
-        d = a.fE(a.a[c]);
-        return bg(Zf, c, d);
+    case Yf:return bg(Zf, c, a.fE(a.a[c]));
     case Zf:return cg(c);
     case $f:return dg(c, a.a[c].Uc(d));
     case ag:return a.Z()
@@ -1547,7 +1466,7 @@ n.eq = function (a) {
         return b
     }
 };
-	n.mf = function (a) {
+n.mf = function (a) {
     for (var b in a) switch (b) {
     case Xf:
         return Fba(this, a[b])
@@ -1581,7 +1500,7 @@ n.Gb = function (a, b) {
         break
     }
 };
-	n.Z = function () {
+n.Z = function () {
     var a = nc(this.a, this.fE, this);
     return bg(ag, undefined, a)
 };
@@ -2102,12 +2021,12 @@ function ji(a) {
     b.fontFamily = a.eo;
     b.color = a.Mr;
     b.backgroundColor = a.Wo == k ? li : a.Wo;
-	b.fontWeight = a.gl ? F : G;
-	b.fontStyle = a.Oj ? J : G;
+    b.fontWeight = a.gl ? F : G;
+    b.fontStyle = a.Oj ? J : G;
     var c = [];
-	a.bu && c.push(mi);
-	a.Vt && c.push(Pba);
-	b.textDecoration = c.length > 0 ? c.join(x) : Hf;
+    a.bu && c.push(mi);
+    a.Vt && c.push(Pba);
+    b.textDecoration = c.length > 0 ? c.join(x) : Hf;
     switch (a.wm) {
     case gi:b.verticalAlign = Qba;break;
     case ni:b.verticalAlign = ni; break;
@@ -2310,10 +2229,10 @@ function Bi() {
     this.f = {}
 }
 s(Bi, t);
-	n = Bi.prototype;
-	n.mg = 1;
-	n.Xx = 0;
-	n.Za = function (a, b, c) {
+n = Bi.prototype;
+n.mg = 1;
+n.Xx = 0;
+n.Za = function (a, b, c) {
     var d = this.f[a];
     d || (d = this.f[a] = []);
     var e = this.mg;
@@ -2324,7 +2243,7 @@ s(Bi, t);
     d.push(e);
     return e
 };
-	n.of = function (a, b, c) {
+n.of = function (a, b, c) {
     if (a = this.f[a]) {
         var d = this.a;
         if (a = qc(a, function (e) {
@@ -2349,7 +2268,7 @@ n.jq = function (a) {
     }
     return !!b
 };
-	n.Wx = function (a) {
+n.Wx = function (a) {
     var b = this.f[a];
     if (b) {
         this.Xx++;
@@ -2375,7 +2294,7 @@ n.clear = function (a) {
         this.f = {}
     }
 };
-	n.$g = function (a) {
+n.$g = function (a) {
     if (a) {
         var b = this.f[a];
         return b ? b.length : 0
@@ -2384,7 +2303,12 @@ n.clear = function (a) {
     for (b in this.f) a += this.$g(b);
     return a
 };
-	n.q = function () {Bi.p.q.call(this);delete this.a;delete this.f;delete this.g};
+n.q = function () {
+	Bi.p.q.call(this);
+	delete this.a;
+	delete this.f;
+	delete this.g
+};
 var Ci = "default";
 
 function Di(a, b) {
@@ -2396,17 +2320,17 @@ function Di(a, b) {
 }
 s(Di, t);
 var Ei = l;
-	n = Di.prototype;
-	n.q = function () {
+n = Di.prototype;
+n.q = function () {
     Di.p.q.call(this);
     this.a.G();
     delete this.a;
     delete this.f
 };
-	n.ma = function () {return this.n};
+n.ma = function () {return this.n};
 var Fi = "enabled";
-	n.Ab = function () {return !!this.pc(Fi)};
-	n.la = function (a, b) {
+n.Ab = function () {return !!this.pc(Fi)};
+n.la = function (a, b) {
     var c = b || Ci,
         d = true;
     if (a) {
@@ -2421,17 +2345,11 @@ var Fi = "enabled";
     }
     this.setProperty(Fi, d)
 };
-var Gi = "visible";
-	n.Da = function () {return !!this.pc(Gi)};
-n.X = function (a) {this.setProperty(Gi, a)};
-var Hi = "selected";
-
-function Ii(a) {return !!a.pc(Hi)}
-n.hd = function (a) {this.setProperty(Hi, a)};
+var Gi = "visible";n.Da = function () {return !!this.pc(Gi)};n.X = function (a) {this.setProperty(Gi, a)};
+var Hi = "selected";function Ii(a) {return !!a.pc(Hi)}n.hd = function (a) {this.setProperty(Hi, a)};
 var Ji = "keys";n.Ue = function () {return this.pc(Ji)};
-var Ki ="value";n.ea = function () {return this.pc(Ki)};
-	n.zb = function (a) {this.setProperty(Ki, a)};
-	n.pc = function (a) {return this.f[a]};
+var Ki ="value";n.ea = function () {return this.pc(Ki)};n.zb = function (a) {this.setProperty(Ki, a)};
+n.pc = function (a) {return this.f[a]};
 var Li = "change";
 	n.setProperty = function (a, b) {
     var c = this.f[a];
@@ -2440,12 +2358,10 @@ var Li = "change";
         this.a.Wx(Li, a, b, c)
     }
 };
-var Mi = "action";
-
-function Ni(a, b) {a.Ab() && !Ei && a.a.Wx(Mi, b)}
+var Mi = "action";function Ni(a, b) {a.Ab() && !Ei && a.a.Wx(Mi, b)}
 n.Za = function (a, b, c) {return this.a.Za(a, b, c)};
-	n.of = function (a, b, c) {return this.a.of(a, b, c)};
-	n.jq = function (a) {return this.a.jq(a)};
+n.of = function (a, b, c) {return this.a.of(a, b, c)};
+n.jq = function (a) {return this.a.jq(a)};
 var Oi = "radio";
 
 function Uba(a, b) {
@@ -2462,7 +2378,7 @@ function Uba(a, b) {
 Pi=goog.events.EventTarget;
 
 var Qi = "525";
-
+Vba=goog.events.KeyCodes.firesKeyPressEvent;
 function Vba(a, b, c, d, e) {
     if (!y.ia && !(y.La && y.Xb(Qi))) return true;
     if (y.Fc && e) return Ri(a);
@@ -2728,7 +2644,7 @@ n.Zx = function (a) {
     }
     b(c, d, a)
 };
-	n.q = function () {
+n.q = function () {
     Tj.p.q.call(this);
     this.g = {};
     re(this.a, Qj, this.yw, l, this);
@@ -2739,7 +2655,7 @@ n.Zx = function (a) {
     }
     this.a = k
 };
-	n.gJ = function (a) {
+n.gJ = function (a) {
     if (a.keyCode == 224) {
         this.OK = true;
         Oj(function () {
@@ -2756,7 +2672,7 @@ n.Zx = function (a) {
 
 function $j(a, b) {return y.Xk && !y.Ua && b.ctrlKey && b.ig && !b.Cd}
 n.vJ = function (a) {if (a.keyCode > 32 && $j(this, a)) this.K = true};
-	n.wJ = function (a) {!this.K && $j(this, a) && this.yw(a)};
+n.wJ = function (a) {!this.K && $j(this, a) && this.yw(a)};
 
 function Zj(a, b, c) {
     var d = b.shift();
@@ -2831,15 +2747,7 @@ function Zba(a) {
         f(Error(a))
     }
 };
-	y.product = {};
-	y.product.UE = l;
-	y.product.SE = l;
-	y.product.XE = l;
-	y.product.WE = l;
-	y.product.RE = l;
-	y.product.TE = l;
-	y.product.$E = l;
-	y.product.cj = y.Yy || y.az || y.product.UE || y.product.SE || y.product.XE || y.product.WE || y.product.RE || y.product.TE || y.product.$E;
+y.product=goog.userAgent.product;
 var fk = "Firefox",
     $ba = "Camino",
     aca = "iPhone",
@@ -2848,33 +2756,7 @@ var fk = "Firefox",
     dca = "Android",
     hk = "Chrome",
     ik = "Safari";
-y.product.jm = function () {
-    y.product.lH = l;
-    y.product.jH = l;
-    y.product.pH = l;
-    y.product.oH = l;
-    y.product.iH = l;
-    y.product.kH = l;
-    y.product.rH = l;
-    var a = y.XA();
-    if (a) if (a.indexOf(fk) != -1) y.product.lH = true;
-    else if (a.indexOf($ba) != -1) y.product.jH = true;
-    else if (a.indexOf(aca) != -1 || a.indexOf(bca) != -1) y.product.pH = true;
-    else if (a.indexOf(cca) != -1) y.product.oH = true;
-    else if (a.indexOf(dca) != -1) y.product.iH = true;
-    else if (a.indexOf(hk) != -1) y.product.kH = true;
-    else if (a.indexOf(ik) != -1) y.product.rH = true
-};
-	y.product.cj || y.product.jm();
-	y.product.Gc = y.Gc;
-y.product.ia = y.ia;
-	y.product.u3 = y.product.cj ? y.product.UE : y.product.lH;
-	y.product.f3 = y.product.cj ? y.product.SE : y.product.jH;
-	y.product.O3 = y.product.cj ? y.product.XE : y.product.pH;
-	y.product.jO = y.product.cj ? y.product.WE : y.product.oH;
-	y.product.X2 = y.product.cj ? y.product.RE : y.product.iH;
-	y.product.qq = y.product.cj ? y.product.TE : y.product.kH;
-	y.product.nz = y.product.cj ? y.product.$E : y.product.rH;
+
 var jk = l;
 
 function kk(a, b, c, d, e) {
@@ -3074,8 +2956,7 @@ var eca = "docs-icon-img docs-icon-",
 
 function Mea(a) {
     function b(c, d, e, g, h) {
-        return kk(c, d, e, g ? eca + g : g,
-        h)
+        return kk(c, d, e, g ? eca + g : g,h)
     }
     jk = true;
     a = !! a;
@@ -3745,31 +3626,16 @@ vl.prototype.K = function (a) {
     cl(this, K.Ju, true);
     cl(this, K.Vk, true)
 };
-	vl.prototype.q = function () {
+vl.prototype.q = function () {
     vl.p.q.call(this);
     this.n.G();
     delete this.n
 };
+z.qb=goog.a11y.aria;
 	z.qb = {};
 var Tga = "role";
-	z.qb.Mh = function (a, b) {
-    if (y.Ua || z.qb.rD) {
-        a.setAttribute(Tga, b);
-        a.f = b
-    }
-};
-	z.qb.ki = function (a) {return a.f || v};
 var vo = "aria-";
-	z.qb.Ka = function (a, b, c) {if (y.Ua || z.qb.rD) a.setAttribute(vo + b, c)};
-	z.qb.tb = function (a, b) {return a.getAttribute(vo + b) || v};
-	z.qb.r5 = function () {return !!z.qb.rD};
-	z.qb.Z5 = function (a) {z.qb.rD = a};
 var wo = "activedescendant";
-	z.qb.j5 = function (a) {
-    var b = z.qb.tb(a, wo);
-    return z.wb(a).getElementById(b)
-};
-	z.qb.Y5 = function (a, b) {z.qb.Ka(a, wo, b ? b.id : v)};
 var xo = "focusout",
     yo = "blur",
     zo = "focusin",
@@ -3777,9 +3643,9 @@ var xo = "focusout",
 
 function Bo(a) {
     this.ua = a;
-    a = y.ia ? xo : yo;this.a = oe(this.ua, y.ia ? zo : Ao,
-    this,
-    !y.ia);this.f = oe(this.ua, a, this, !y.ia)
+    a = y.ia ? xo : yo;
+    this.a = oe(this.ua, y.ia ? zo : Ao,this,!y.ia);
+    this.f = oe(this.ua, a, this, !y.ia)
 }
 s(Bo, Pi);
 	Bo.prototype.handleEvent = function (a) {
@@ -3856,7 +3722,8 @@ function Vo(a, b) {
     var c;
     if (a.Uf && b) {
         c = a.Uf;
-        c = b in c ? c[b] : void 0;c = c || k
+        c = b in c ? c[b] : void 0;
+	c = c || k
     } else c = k;
     return c
 }
